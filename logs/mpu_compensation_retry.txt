@@ -1,0 +1,25 @@
+HOLD STILL: calibration attempt 1/3
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=810004 state=CALIBRATING pitch=null roll=null accel_g=1.045 samples=0 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=810504 state=CALIBRATING pitch=null roll=null accel_g=1.049 samples=0 fault=NONE OLED=initialized
+HOLD STILL: calibration attempt 2/3
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=811004 state=CALIBRATING pitch=null roll=null accel_g=1.041 samples=0 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=811504 state=CALIBRATING pitch=null roll=null accel_g=1.056 samples=0 fault=NONE OLED=initialized
+CAL motion check: accel_g=1.032 gyro_radps=0.152
+HOLD STILL: calibration attempt 3/3
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=812004 state=CALIBRATING pitch=null roll=null accel_g=1.049 samples=0 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=812504 state=CALIBRATING pitch=null roll=null accel_g=1.059 samples=0 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=813004 state=CALIBRATING pitch=null roll=null accel_g=1.047 samples=3 fault=NONE OLED=initialized
+IMU ERROR: CALIBRATION MOTION; servo OFF, compensation OFF
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=813504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=814004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=814504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=815004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=815504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=816004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=816504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=817004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=817504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=818004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=818504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=819004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=819504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.088 samples=19 fault=CALIBRATION MOTION OLED=initialized

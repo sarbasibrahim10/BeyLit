@@ -1,0 +1,19 @@
+IMU ERROR: IMU INIT FAILED; servo OFF, compensation OFF
+t=29500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=30000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=30500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=31000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=31500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=32000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=32500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=33000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=33500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=34000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=34500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=35000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=35500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=36000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=36500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=37000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=37500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized
+t=38000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU INIT FAILED OLED=initialized

@@ -1,0 +1,10 @@
+--- session 2026-10-04 10:23:03 steps=['STATUS']
+[   0.00s] >>> SENT STATUS
+[   0.12s] IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+[   0.12s] IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+[   0.12s] MPU6500 diagnostic initialized at 0x68; HOLD STILL.
+[   0.19s] HOLD STILL: calibration attempt 1/3
+[   0.25s] COMP=OFF TEST=0 signs=-1,-1 command_us=1500,1500 (not measured) t=358 state=CALIBRATING pitch=null roll=null accel_g=0.000 samples=0 fault=NONE OLED=initialized
+[   0.38s] COMP=OFF TEST=0 signs=-1,-1 command_us=1500,1500 (not measured) t=500 state=CALIBRATING pitch=null roll=null accel_g=1.011 samples=0 fault=NONE OLED=initialized
+[   0.89s] COMP=OFF TEST=0 signs=-1,-1 command_us=1500,1500 (not measured) t=1000 state=CALIBRATING pitch=null roll=null accel_g=1.011 samples=0 fault=NONE OLED=initialized
+[   1.39s] COMP=OFF TEST=0 signs=-1,-1 command_us=1500,1500 (not measured) t=1500 state=CALIBRATING pitch=null roll=null accel_g=1.013 samples=13 fault=NONE OLED=initialized

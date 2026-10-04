@@ -1,0 +1,283 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <Adafruit_SH110X.h>
+#include <ESP32Servo.h>
+#include <cstring>
+#include <Adafruit_VL53L0X.h>
+
+// Resolution confirmed: 128 x 64. Controller under visual diagnosis.
+constexpr int OLED_HEIGHT = 64;
+constexpr int PAN_PIN = 18;
+constexpr int NEUTRAL_US = 1500;
+constexpr int MIN_US = 1450;
+constexpr int MAX_US = 1550;
+Adafruit_SSD1306 display(128, OLED_HEIGHT, &Wire, -1, 100000, 100000);
+Adafruit_SH1106G shDisplay(128, OLED_HEIGHT, &Wire, -1, 100000, 100000);
+// User verified legible text in SH1106 mode. Use that mode on every boot.
+bool useSh1106 = true;
+Adafruit_VL53L0X tof;
+bool tofReady = false, distanceValid = false;
+uint16_t distanceMm = 0;
+uint8_t rangeStatus = 255;
+uint32_t lastDistance = 0, lastResult = 0, lastPoll = 0;
+const char *distanceFault = "STARTING";
+Servo pan;
+bool servoHasMoved = false;
+uint32_t servoStoppedAt = 0;
+bool busReady = false, oledReady = false, testing = false;
+uint8_t oledAddress = 0;
+int pulse = NEUTRAL_US;
+unsigned phase = 0;
+uint32_t lastStep = 0, testStarted = 0, lastStatus = 0;
+char command[40];
+size_t commandLength = 0;
+bool overflow = false;
+
+bool responds(uint8_t address) {
+    if (!busReady) return false;
+    Wire.beginTransmission(address);
+    return Wire.endTransmission() == 0;
+}
+
+void initTof() {
+    tofReady = distanceValid = false;
+    distanceFault = "TOF INIT ERROR";
+    if (!responds(0x29) || !tof.begin(0x29, false, &Wire)) {
+        Serial.println("TOF initialization failed; distance unknown."); return;
+    }
+    Wire.setTimeOut(25);
+    if (!tof.setMeasurementTimingBudgetMicroSeconds(33000) || !tof.startRangeContinuous(100)) {
+        Serial.println("TOF configuration failed; distance unknown."); return;
+    }
+    tofReady = true;
+    lastResult = millis();
+    distanceFault = "WAITING FOR DATA";
+    Serial.println("VL53L0X ready: 33ms budget, 100ms period; servo OFF.");
+}
+
+void updateTof() {
+    if (!tofReady) return;
+    const uint32_t now = millis();
+    if (static_cast<uint32_t>(now - lastPoll) < 20) return;
+    lastPoll = now;
+    const bool complete = tof.isRangeComplete();
+    if (tof.Status != VL53L0X_ERROR_NONE) {
+        tofReady = distanceValid = false; distanceFault = "TOF BUS ERROR";
+        Serial.println("TOF API/bus error; distance unknown."); return;
+    }
+    if (complete) {
+        const uint16_t raw = tof.readRangeResult();
+        lastResult = millis();
+        rangeStatus = tof.readRangeStatus();
+        distanceValid = tof.Status == VL53L0X_ERROR_NONE && rangeStatus == 0 && raw != 0xFFFF && raw > 0;
+        if (testing || (servoHasMoved && static_cast<uint32_t>(millis() - servoStoppedAt) < 500)) {
+            distanceValid = false;
+            distanceFault = "SERVO MOVING/SETTLE";
+        } else if (!distanceValid) distanceFault = "INVALID RANGE";
+        if (distanceValid) { distanceMm = raw; lastDistance = lastResult; distanceFault = "NONE"; }
+        Serial.printf("RANGE t=%lu mm=", static_cast<unsigned long>(lastResult));
+        if (distanceValid) Serial.print(distanceMm); else Serial.print("null");
+        Serial.printf(" valid=%u range_status=%u api_status=%d fault=%s\n",
+                      distanceValid, rangeStatus, tof.Status, distanceFault);
+    } else if (static_cast<uint32_t>(now - lastResult) > 500) {
+        tofReady = distanceValid = false; distanceFault = "TOF TIMEOUT";
+        Serial.println("TOF acquisition timeout; distance unknown. Reset to retry.");
+    }
+}
+
+void drawStatus() {
+    if (!oledReady) return;
+    if (!responds(oledAddress)) {
+        oledReady = false;
+        Serial.println("OLED ERROR: address stopped responding; user-facing demo unavailable.");
+        return;
+    }
+    Adafruit_GFX &canvas = useSh1106 ? static_cast<Adafruit_GFX &>(shDisplay)
+                                        : static_cast<Adafruit_GFX &>(display);
+    if (useSh1106) shDisplay.clearDisplay(); else display.clearDisplay();
+    canvas.setTextSize(1);
+    canvas.setTextColor(1);
+    canvas.setTextWrap(false);
+    canvas.setCursor(4, 4);
+    canvas.println("BeyLit DISTANCE TEST");
+    canvas.setCursor(4, 14);
+    if (distanceValid && static_cast<uint32_t>(millis() - lastDistance) <= 500) {
+        canvas.print("Distance: "); canvas.print(distanceMm); canvas.print(" mm");
+    } else canvas.print("DISTANCE UNKNOWN");
+    canvas.setCursor(4, 24);
+    canvas.print(distanceValid ? "RAW / STATIONARY" : distanceFault);
+    canvas.setCursor(4, 34);
+    canvas.println("ADVISORY ONLY");
+    canvas.setCursor(4, 44);
+    canvas.println("NO AUTOMATIC BRAKING");
+    canvas.setCursor(4, 54);
+    canvas.print("Uptime: "); canvas.print(millis() / 1000); canvas.print("s");
+    canvas.drawRect(0, 0, 128, 64, 1);
+    // Neither display API reports framebuffer transfer success.
+    if (useSh1106) shDisplay.display(); else display.display();
+}
+
+void initOled() {
+    oledReady = false;
+    const bool a = responds(0x3C), b = responds(0x3D);
+    if (a == b) {
+        Serial.println(a ? "OLED ERROR: both addresses ACK; resolve address ambiguity."
+                         : "OLED ERROR: no ACK at 0x3C or 0x3D. Check power/pin labels.");
+        return;
+    }
+    oledAddress = a ? 0x3C : 0x3D;
+    oledReady = useSh1106 ? shDisplay.begin(oledAddress, false)
+                           : display.begin(SSD1306_SWITCHCAPVCC, oledAddress, false, false);
+    Wire.setClock(100000);
+    Wire.setTimeOut(25);
+    if (!oledReady) {
+        Serial.println("OLED ERROR: framebuffer initialization failed.");
+        return;
+    }
+    Serial.printf("%s diagnostic initialization sent: 0x%02X, 128x%d. Verify visually.\n",
+                  useSh1106 ? "SH1106" : "SSD1306", oledAddress, OLED_HEIGHT);
+    drawStatus();
+}
+
+void scan() {
+    if (!busReady) { Serial.println("I2C unavailable"); return; }
+    unsigned count = 0;
+    for (uint8_t address = 1; address < 127; ++address) {
+        Wire.beginTransmission(address);
+        uint8_t result = Wire.endTransmission();
+        if (!result) { Serial.printf("ACK 0x%02X\n", address); ++count; }
+        else if (result != 2) Serial.printf("BUS ERROR 0x%02X code=%u\n", address, result);
+        yield();
+    }
+    Serial.printf("%u responding addresses; addresses do not identify models.\n", count);
+}
+
+void stopServo() {
+    pan.detach();
+    pinMode(PAN_PIN, OUTPUT);
+    digitalWrite(PAN_PIN, LOW);
+    if (testing) servoStoppedAt = millis();
+    testing = false;
+    Serial.println("SG90 signal OFF (not a power disconnect).");
+}
+
+void startServoTest() {
+    if (testing) { Serial.println("Test already running"); return; }
+    pan.setPeriodHertz(50);
+    pan.attach(PAN_PIN, MIN_US, MAX_US);
+    if (!pan.attached()) { Serial.println("SERVO ERROR: PWM attachment failed"); return; }
+    pulse = NEUTRAL_US;
+    pan.writeMicroseconds(pulse);
+    testing = true;
+    servoHasMoved = true;
+    distanceValid = false;
+    distanceFault = "SERVO MOVING";
+    phase = 0;
+    lastStep = testStarted = millis();
+    Serial.println("SG90: neutral then small sweep; commanded position only.");
+}
+
+void updateServo() {
+    if (!testing) return;
+    uint32_t now = millis();
+    if (static_cast<uint32_t>(now - testStarted) >= 10000) { stopServo(); return; }
+    if (static_cast<uint32_t>(now - testStarted) < 1000 ||
+        static_cast<uint32_t>(now - lastStep) < 40) return;
+    lastStep = now;
+    const int targets[] = {MIN_US, MAX_US, NEUTRAL_US};
+    const int target = targets[phase];
+    if (pulse < target) ++pulse;
+    else if (pulse > target) --pulse;
+    pan.writeMicroseconds(pulse);
+    if (pulse == target && ++phase == 3) stopServo();
+}
+
+void status() {
+    Serial.printf("t=%lu OLED=%s SG90=%s command_us=%d (not measured)\n",
+        static_cast<unsigned long>(millis()), oledReady ? "initialized; verify visually" : "ERROR",
+        testing ? "TEST" : "OFF", pulse);
+}
+
+// Probe documented VL53L0X reset ID registers; no ranging driver is selected yet.
+void checkTofId() {
+    if (testing || !busReady) { Serial.println("Stop servo test; I2C must be available."); return; }
+    uint8_t values[3];
+    for (uint8_t i = 0; i < 3; ++i) {
+        Wire.beginTransmission(0x29);
+        Wire.write(static_cast<uint8_t>(0xC0 + i));
+        const uint8_t error = Wire.endTransmission(false);
+        if (error != 0) { Serial.printf("TOF ID pointer error=%u\n", error); return; }
+        if (Wire.requestFrom(static_cast<uint8_t>(0x29), static_cast<uint8_t>(1)) != 1) {
+            Serial.println("TOF ID read failed; model unresolved."); return;
+        }
+        values[i] = Wire.read();
+    }
+    Serial.printf("TOF ID C0=0x%02X C1=0x%02X C2=0x%02X\n",values[0],values[1],values[2]);
+    Serial.println(values[0] == 0xEE && values[1] == 0xAA && values[2] == 0x10
+        ? "ID matches ST VL53L0X documented reset signature."
+        : "ID does not match documented VL53L0X reset signature; model unresolved.");
+}
+
+void handleCommand() {
+    if (!strcmp(command, "TOF ID")) { Serial.println("ID already checked; ranging active. Reset before ID probe."); return; }
+    if (!strcmp(command, "SERVO OFF")) stopServo();
+    else if (!strcmp(command, "SERVO TEST")) startServoTest();
+    else if (!strcmp(command, "STATUS")) status();
+    else if (!strcmp(command, "OLED SH1106") || !strcmp(command, "OLED SSD1306")) {
+        if (testing) Serial.println("Stop servo test before changing OLED mode.");
+        else {
+            useSh1106 = !strcmp(command, "OLED SH1106");
+            initOled();
+        }
+    }
+    else if (!strcmp(command, "SCAN")) {
+        Serial.println("SCAN disabled while ranging; startup scan is printed on reset.");
+    } else if (!strcmp(command, "OLED RETRY")) {
+        if (testing) Serial.println("Stop servo test before OLED retry."); else initOled();
+    } else Serial.println("Commands: HELP | STATUS | SCAN | OLED RETRY | OLED SH1106 | OLED SSD1306 | SERVO TEST | SERVO OFF");
+}
+
+void readCommands() {
+    // Bound input work so a continuous stream cannot starve scheduling.
+    for (unsigned n = 0; n < 64 && Serial.available(); ++n) {
+        char c = Serial.read();
+        if (c == '\r' || c == '\n') {
+            if (overflow) Serial.println("Command too long; discarded.");
+            else if (commandLength) { command[commandLength] = '\0'; handleCommand(); }
+            commandLength = 0;
+            overflow = false;
+        } else if (!overflow) {
+            if (commandLength < sizeof(command) - 1) command[commandLength++] = c;
+            else overflow = true;
+        }
+    }
+}
+
+void setup() {
+    Serial.begin(115200);
+    stopServo(); // Do not move an unknown bracket position on boot.
+    busReady = Wire.begin(21, 22, 100000);
+    Wire.setTimeOut(25);
+    Serial.println("BeyLit OLED + SG90 bench firmware; SH1106 boot mode; not obstacle detection.");
+    if (!busReady) Serial.println("I2C initialization failed");
+    else { scan(); initOled(); initTof(); }
+    Serial.println("Remove servo bracket load before SERVO TEST. Initial centering may jump.");
+    Serial.println("Commands: HELP | STATUS | SCAN | OLED RETRY | OLED SH1106 | OLED SSD1306 | SERVO TEST | SERVO OFF");
+}
+
+void loop() {
+    readCommands();
+    updateServo();
+    updateTof();
+    const uint32_t now = millis();
+    if (static_cast<uint32_t>(now - lastStatus) >= 1000) {
+        lastStatus = now;
+        status();
+        drawStatus();
+    }
+    yield();
+}
+
+

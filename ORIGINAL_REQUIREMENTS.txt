@@ -1,0 +1,596 @@
+You are my embedded-systems development partner. Help me build and test a working hackathon prototype called BeyLit.
+
+Prioritize reliable, understandable firmware over unnecessary features. Work incrementally, provide complete code, and do not claim anything has been tested unless you actually ran the relevant test.
+
+PROJECT PURPOSE
+
+Build a wheelchair-mounted obstacle-awareness prototype using:
+- One ToF distance sensor.
+- One MPU6050 IMU.
+- Two SG90 servos.
+- One ESP32-WROOM development board.
+- One 1.3-inch OLED.
+
+The ToF sensor sits on a two-servo pan/tilt bracket:
+- Pan servo scans left, centre and right.
+- Tilt servo compensates for wheelchair pitch using the frame-mounted MPU6050.
+
+The OLED displays directional obstacle information and STOP warnings.
+
+IMPORTANT:
+STOP is a visual advisory only.
+We have no wheelchair motor driver, brake interface or certified safety controller.
+Do not implement or claim automatic wheelchair stopping.
+Do not connect this prototype to the wheelchair propulsion electronics.
+Initial testing must be on a tabletop or an unoccupied stationary wheelchair.
+
+CURRENT DEVELOPMENT ENVIRONMENT
+
+The PlatformIO project already exists:
+
+Project name: BeyLit
+IDE: VS Code
+Build system: PlatformIO
+Board selection: Espressif ESP32 Dev Module
+Board ID: esp32dev
+Framework: Arduino
+Language: C++
+Serial monitor: 115200 baud
+Connection: USB
+
+Do not switch frameworks or introduce Raspberry Pi, cloud services or a mobile app.
+
+AVAILABLE PHASE 1 HARDWARE
+
+1. ESP32-WROOM development board – 1.
+2. ToF sensor labelled/referred to as “VL53LDK” – 1.
+3. MPU6050 accelerometer/gyroscope module – 1.
+4. SG90 servo motors – 2.
+5. 1.3-inch OLED display – 1.
+6. Regulated 5 V power source.
+7. Breadboard and jumper wires.
+8. Mounting materials/pan-tilt bracket.
+
+HARDWARE IDENTIFICATION REQUIRED
+
+“VL53LDK” is not sufficient to choose a sensor driver.
+Ask for clear photos of the ToF module, its markings and pin labels.
+
+Determine the actual sensor model, such as:
+- VL53L0X.
+- VL53L1X.
+- VL53L4CD.
+- Another specifically identified model.
+
+Do not silently assume VL53L0X.
+Do not invent a compatible library.
+
+Also ask for:
+- OLED controller: SH1106, SSD1306 or another controller.
+- OLED resolution.
+- OLED interface: I2C or SPI.
+- Exact ESP32 development-board variant.
+- MPU6050 breakout pin labels.
+- Servo bracket arrangement and axis directions.
+- Power-source voltage/current rating.
+
+An I2C scanner can identify addresses, but it cannot reliably establish the exact ToF model or OLED controller.
+
+Until those details are confirmed:
+- Provide the I2C scanner and other independent module tests.
+- Keep model-specific driver choices pending.
+- Do not present guessed wiring as verified.
+
+SCOPE EXCLUSIONS
+
+Do not add:
+- Raspberry Pi.
+- Mobile camera.
+- AI inference on the device.
+- Claude API.
+- Wi-Fi dashboard.
+- Bluetooth.
+- Weather API.
+- DHT11.
+- Ultrasonic sensor.
+- External micro-SD module.
+- Wheel encoders.
+- Wheelchair motor control.
+- Autonomous steering.
+- Full two-axis stabilization.
+- Machine learning.
+- PID tuning unless a simpler solution proves inadequate.
+
+Claude/Codex is helping develop the firmware; the firmware itself is deterministic embedded software.
+Do not describe this Phase 1 build as runtime AI.
+
+MECHANICAL DESIGN
+
+Mount the MPU6050 rigidly on the wheelchair frame or test base, not on the moving ToF platform.
+
+Mount the ToF sensor on the pan/tilt bracket.
+
+Servo responsibilities:
+1. Pan: left/centre/right scanning relative to the chair.
+2. Tilt: approximate pitch compensation.
+
+Clearly explain:
+- Two servos used for pan and tilt do not provide independent roll stabilization.
+- MPU6050 alone does not provide drift-free absolute yaw.
+- This arrangement is approximate pitch compensation, not guaranteed stabilization.
+- Sensor measurements are sequential, not simultaneous 360-degree coverage.
+- Pan/tilt geometry can couple the axes; do not claim simple pitch subtraction is accurate at every pan angle.
+
+Start with small base tilts and modest scan angles.
+If necessary, restrict the stabilization demonstration to centre-facing measurements until off-centre performance has been tested.
+
+Prevent:
+- Cable twisting.
+- Mechanical collisions.
+- Servo hard-stop contact.
+- Pinch points.
+- Excessive bracket loading.
+
+Choose conservative adjustable angle limits, not automatic 0–180-degree sweeps.
+
+POWER AND ELECTRICAL REQUIREMENTS
+
+An ESP32 development board may accept 5 V through USB or its appropriate labelled 5V/VIN input, depending on the board.
+The ESP32 chip and GPIO operate at 3.3 V logic.
+
+Require the exact board details before confirming power wiring.
+
+Servos:
+- Power both SG90 servos directly from a suitably rated regulated 5 V supply branch.
+- Never power them from the ESP32 3V3 pin.
+- Avoid routing servo load current through the development board.
+- Connect servo-supply ground and ESP32 ground.
+- Explain that a separate power branch does not necessarily require a separate battery.
+- Confirm supply capability for simultaneous servo movement and transient loads.
+- Suggest a suitable bulk capacitor near the servo rail if available.
+- Do not claim a capacitor fixes an undersized supply.
+- Avoid simultaneous USB and external VIN power unless the board’s power arrangement is confirmed.
+
+Sensors/display:
+- Verify accepted voltage and logic levels for each exact breakout.
+- Do not assume every breakout accepts 5 V.
+- Ensure I2C pull-ups do not pull ESP32 SDA/SCL to 5 V.
+- Do not put 5 V onto ESP32 GPIO.
+
+Do not use an XL6009 or any other power converter unless separately justified and its output is measured before connection.
+
+PROVISIONAL PIN PLAN
+
+For a confirmed standard ESP32-WROOM development board:
+
+I2C:
+- GPIO 21: SDA.
+- GPIO 22: SCL.
+
+Servo signals:
+- GPIO 18: pan servo.
+- GPIO 19: tilt servo.
+
+All confirmed I2C modules may share the bus if their addresses do not conflict.
+
+Typical addresses to check, not assume:
+- MPU6050: 0x68 or 0x69.
+- OLED: 0x3C or 0x3D.
+- Many VL53-series sensors: 0x29.
+
+If the OLED is SPI, revise the pin plan explicitly.
+Avoid boot-strapping, flash-connected and input-only pins for servo outputs.
+
+FIRMWARE STACK
+
+Use:
+- PlatformIO.
+- Arduino framework.
+- C++.
+- Wire for I2C.
+- ESP32Servo for servo control.
+- Adafruit MPU6050 plus its dependencies.
+- A verified model-specific ToF library.
+- A verified OLED library; U8g2 is acceptable for supported SH1106/SSD1306 displays.
+
+Inspect existing project files before modifying them.
+
+Pin compatible platform and library versions once a successful build is established.
+Do not assume the latest ESP32Servo is compatible with every Arduino-ESP32 version.
+Verify compatibility and document the selected versions.
+
+Give a complete platformio.ini.
+Do not leave unresolved dependency names in a configuration presented as build-ready.
+
+FIRMWARE ARCHITECTURE
+
+Keep it small and modular.
+
+Suggested structure:
+
+BeyLit/
+├── platformio.ini
+├── include/
+│   ├── config.h
+│   ├── types.h
+│   ├── sensor_manager.h
+│   ├── servo_controller.h
+│   ├── obstacle_logic.h
+│   └── display_manager.h
+├── src/
+│   ├── main.cpp
+│   ├── sensor_manager.cpp
+│   ├── servo_controller.cpp
+│   ├── obstacle_logic.cpp
+│   └── display_manager.cpp
+├── test/
+│   └── test_obstacle_logic/
+└── README.md
+
+Do not create excessive abstraction.
+A smaller structure is acceptable if easier to build and debug.
+
+Keep obstacle-decision logic independent of hardware APIs so it can be unit-tested.
+
+OPERATIONAL STATES
+
+Implement clear system states:
+- STARTUP.
+- CALIBRATING.
+- SCANNING.
+- OBSTACLE_WARNING.
+- STOP_WARNING.
+- SENSOR_ERROR.
+
+Track distance/validity separately for:
+- LEFT.
+- CENTRE.
+- RIGHT.
+
+Each sector reading should contain:
+- Distance in millimetres, when valid.
+- Validity.
+- Acquisition time.
+- Sector.
+- Commanded pan angle.
+- Applicable sensor status.
+
+Never convert invalid, timed-out or stale measurements into “clear.”
+
+OLED wording:
+- STARTING.
+- HOLD STILL.
+- SCANNING.
+- LEFT OBSTACLE.
+- FRONT OBSTACLE.
+- RIGHT OBSTACLE.
+- STOP: OBSTACLE.
+- SENSOR ERROR.
+- DATA STALE.
+- NO NEAR OBSTACLE.
+
+Avoid “PATH SAFE.”
+“No near obstacle” means only that fresh valid measurements found nothing inside the configured warning range in the sampled sectors.
+
+Keep an explicit small label or README explanation:
+“ADVISORY ONLY — NO AUTOMATIC BRAKING.”
+
+IMU CALIBRATION AND FILTERING
+
+At startup:
+1. Initialize MPU6050.
+2. Ask the user to hold the base still in the chosen reference position.
+3. Collect calibration samples.
+4. Reject/retry calibration if substantial movement is detected.
+5. Record reference offsets.
+
+Use a simple documented complementary filter:
+- Integrate gyro rates.
+- Correct pitch/roll estimate using accelerometer-derived orientation.
+- Use measured elapsed time.
+- Handle unreasonable time gaps.
+- Apply the correct unit conversions for the selected library.
+
+Explain that acceleration and impacts can distort accelerometer-based tilt.
+Do not convert every vibration into a precise terrain or safety claim.
+
+Tilt control:
+- Configurable neutral angle.
+- Configurable compensation direction/sign.
+- Configurable gain.
+- Small deadband.
+- Angle limits.
+- Slew-rate limit.
+- Filtered commands to reduce chatter.
+
+Mark the sign convention clearly.
+Provide a slow bench test to determine whether compensation reverses or amplifies base pitch.
+Do not enable unrestricted stabilization before that test.
+
+SCANNING STATE MACHINE
+
+Use cooperative non-blocking scheduling with millis()/micros().
+Avoid long delay() calls in normal operation.
+
+Suggested states:
+1. COMMAND_PAN.
+2. WAIT_FOR_SETTLE.
+3. START_RANGE.
+4. WAIT_FOR_RANGE.
+5. RECORD_RESULT.
+6. ADVANCE_SECTOR.
+
+Suggested sequence:
+CENTRE → LEFT → CENTRE → RIGHT → repeat.
+
+Angles must be configurable and calibrated to the actual bracket.
+Use modest offsets from centre initially.
+
+Servo position is commanded, not measured.
+SG90 does not provide position feedback to this firmware.
+Describe settling time as an empirical assumption.
+
+Only record a sector reading after:
+- Pan movement has had time to settle.
+- Tilt command is sufficiently stable.
+- ToF acquisition has completed successfully.
+
+If tilt moves substantially during acquisition:
+- Discard/mark the reading uncertain, or restart measurement.
+- Prevent endless restarts with a bounded timeout.
+- Mark the sector unknown if stable acquisition cannot be obtained.
+
+Provide configurable:
+- Scan angles.
+- Servo movement rate.
+- Settling time.
+- ToF timing budget where supported.
+- Sample count.
+- Maximum acquisition timeout.
+- Maximum data age.
+
+Check scan-cycle timing against freshness settings.
+Do not set freshness shorter than the achievable scan revisit interval.
+
+DISTANCE FILTERING AND WARNINGS
+
+Use sensor-specific valid-range/status checks.
+Reject invalid readings before filtering.
+
+Use a small median filter or another simple documented robust filter.
+
+Do not let filtering hide an immediately valid close obstacle.
+A fresh valid measurement inside the configured STOP range should raise a warning promptly.
+Use confirmation/hysteresis primarily for clearing warnings.
+
+Demo-only initial configurable thresholds:
+- STOP distance: 600 mm.
+- CAUTION distance: 1200 mm.
+
+These are adjustable demonstration values, not validated wheelchair braking distances.
+
+Threshold rules:
+- Any fresh valid sector below STOP distance:
+  STOP_WARNING with the corresponding direction.
+- Any fresh valid sector below CAUTION distance:
+  OBSTACLE_WARNING.
+- Missing, invalid or stale required sector:
+  Unknown/degraded state; never overall clear.
+- All required sectors fresh and valid above warning thresholds:
+  NO NEAR OBSTACLE.
+
+Maintain known obstacle warnings even if another sector becomes invalid.
+For example:
+“STOP LEFT / RIGHT UNKNOWN.”
+
+Use configurable hysteresis and clearing requirements to prevent flicker.
+Do not erase an obstacle warning just because the next read timed out.
+
+FAILURE HANDLING
+
+Handle:
+- ToF initialization failure.
+- MPU6050 initialization failure.
+- OLED initialization failure.
+- I2C timeout/bus error.
+- Out-of-range ToF results.
+- Stale readings.
+- Failed IMU calibration.
+- Servo compensation saturation.
+- Excessive motion preventing stable reads.
+
+Use bounded library timeouts where supported.
+Do not busy-wait forever for a sensor.
+
+If IMU data fails:
+- Disable compensation.
+- Move toward a conservative neutral position only if mechanically appropriate.
+- Show IMU ERROR / STABILIZATION OFF.
+- Do not claim stabilized measurements.
+
+If ToF data fails:
+- Do not show clear.
+- Show DISTANCE UNKNOWN / STOP ADVISORY.
+
+If OLED fails:
+- Report the failure through Serial.
+- Treat the build as unsuitable for the intended user-facing demo until fixed.
+
+Do not claim the firmware can detect servo stall or power failure without relevant feedback hardware.
+
+SERIAL DIAGNOSTICS
+
+Serial output should include:
+- Time.
+- System state.
+- Pitch.
+- Roll.
+- Pan command.
+- Tilt command.
+- Left/centre/right distance or null.
+- Validity.
+- Data age.
+- Fault reason.
+
+Use readable output first.
+Optional JSON Lines output is acceptable for logs.
+Rate-limit logging so it does not interfere with scanning.
+
+Include commands through Serial:
+- HELP.
+- STATUS.
+- CALIBRATE.
+- SCAN ON.
+- SCAN OFF.
+- STABILIZE ON.
+- STABILIZE OFF.
+- CENTRE.
+
+Commands must respect mechanical limits.
+SCAN OFF must not leave stale data displayed as current.
+
+MILESTONES
+
+Work in this order:
+
+M0: Identify exact hardware and check wiring/power.
+M1: I2C scanner.
+M2: OLED text test.
+M3: Stationary ToF measurement test.
+M4: MPU6050 calibration and pitch/roll output.
+M5: Individual low-speed servo tests without sensor bracket load.
+M6: Pan scan plus directional OLED warnings.
+M7: Centre-facing pitch compensation.
+M8: Combined scan and compensation with settling rules.
+M9: Failure tests and demo polish.
+
+The reliable fallback is:
+ToF + pan scanning + OLED warnings, without stabilization.
+
+Do not make the entire build depend on completing stabilization.
+
+For each milestone provide:
+1. Objective.
+2. Exact confirmed wiring.
+3. Required dependencies.
+4. Complete source files or exact patches.
+5. Build/upload/monitor commands.
+6. Expected output.
+7. Pass/fail criteria.
+8. Troubleshooting steps.
+
+Never ask us to connect unidentified boards using guessed voltage assumptions.
+
+TEST PLAN
+
+Provide reproducible bench tests:
+
+1. Detect each I2C module individually.
+2. Detect all connected modules together.
+3. Display legible OLED text.
+4. Compare ToF readings with a ruler at several distances.
+5. Test matte, dark, angled and reflective targets; record limitations.
+6. Verify left/centre/right labels match physical positions.
+7. Place an obstacle in each sector and observe warnings.
+8. Remove an obstacle and verify hysteresis-based clearing.
+9. Disconnect ToF and verify unknown/error rather than clear.
+10. Stop scanning and verify old data is marked stale.
+11. Disconnect/fail IMU and verify compensation is disabled.
+12. Tilt the test base slowly and verify compensation direction.
+13. Test mechanical angle limits.
+14. Move both servos and check for ESP32 resets or I2C corruption.
+15. Measure full scan cycle and warning latency.
+16. Run repeatedly for at least 15 minutes.
+17. Power-cycle and verify predictable startup/calibration.
+
+Do not test near stairs, traffic, steep slopes or drop-offs.
+Do not use this prototype as fall protection.
+
+Automated logic tests should cover:
+- Threshold boundaries.
+- Invalid measurements.
+- Stale sectors.
+- Hysteresis.
+- Warning persistence.
+- Timestamp rollover-safe comparisons.
+- Mixed obstacle/unknown states.
+
+Synthetic values are acceptable for unit tests only.
+Label them as test fixtures, not real hardware measurements.
+
+DELIVERABLES
+
+Produce:
+1. Complete PlatformIO firmware.
+2. Confirmed wiring table.
+3. Power diagram.
+4. Hardware identification checklist.
+5. Calibration instructions.
+6. README with exact build/upload steps.
+7. Test checklist.
+8. Known limitations.
+9. Two-minute demo script.
+10. A minimal static project page suitable for hosting for one month, only after firmware works.
+
+The hosted page should contain:
+- Project purpose.
+- Hardware list.
+- Demo video placeholder clearly marked for replacement.
+- Build photos section.
+- Firmware/repository link.
+- Test results we actually collected.
+- Clear advisory-only limitations.
+
+Do not publish fictitious results or claim the page has been deployed unless it actually has.
+
+HACKATHON CRITERIA
+
+The judging categories are:
+- New Capability: 25%.
+- It Works: 25%.
+- Keep or Share: 25%.
+- Clarity of Demo: 25%.
+
+Be honest:
+This Phase 1 firmware does not demonstrate a new runtime AI capability.
+We may document how the coding model helped design, implement and debug the system.
+Do not claim the new model outperforms an older model without a controlled comparison.
+
+Prioritize:
+- A working physical demonstration.
+- Clear left/front/right warnings.
+- Visible pitch-compensation demo if stable.
+- Honest limitations.
+- Evidence of useful feedback from intended users, obtained with consent.
+
+WORKFLOW AND RESPONSE RULES
+
+If you have repository tools:
+- Inspect existing files.
+- Make focused changes.
+- Run available builds/tests.
+- Report exact commands and results.
+- Keep changes easy to review.
+
+If you do not have repository tools:
+- Supply complete copy-paste files.
+- State which builds/tests remain unexecuted.
+
+Do not fabricate successful compilation, upload or hardware testing.
+
+Do not generate one huge unverified firmware implementation immediately.
+Start with the hardware questions and M1.
+Proceed milestone by milestone after I provide test results.
+
+YOUR FIRST RESPONSE MUST INCLUDE
+
+1. Brief confirmation of Phase 1 scope.
+2. The essential hardware-identification questions.
+3. A clear explanation that pan + pitch compensation is not full two-axis stabilization.
+4. A clear explanation that OLED STOP is not wheelchair braking.
+5. Review of my existing PlatformIO configuration.
+6. Complete I2C scanner firmware, if the I2C wiring and module voltages have been confirmed.
+7. The next exact action I should take.
+
+Keep explanations practical and concise.
+Provide complete code when a milestone is ready.

@@ -1,0 +1,16 @@
+--- session 2026-10-04 12:57:05 steps=['STATUS']
+[   0.00s] >>> SENT STATUS
+[   0.06s] COMP=ON TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1500 (not measured) t=20233 state=READY pitch=0.15 roll=-0.04 accel_g=1.020 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=NO TARGET reason=BEYOND RANGE
+[   0.06s] TRACE t=20257 mode=COMP axis=ROLL tilt=-0.02 rate_dps=0.1 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.015
+[   0.19s] TRACE t=20371 mode=COMP axis=ROLL tilt=-0.01 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.021
+[   0.31s] TRACE t=20472 mode=COMP axis=ROLL tilt=-0.01 rate_dps=0.1 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.013
+[   0.38s] TRACE t=20572 mode=COMP axis=ROLL tilt=-0.02 rate_dps=0.3 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.025
+[   0.50s] COMP=ON TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1500 (not measured) t=20659 state=READY pitch=0.11 roll=-0.03 accel_g=1.012 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=2 dist_fault=NO DIST READING verdict=NO TARGET reason=BEYOND RANGE
+[   0.50s] TRACE t=20683 mode=COMP axis=ROLL tilt=-0.02 rate_dps=0.1 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.020
+[   0.69s] TRACE t=20871 mode=COMP axis=ROLL tilt=0.00 rate_dps=0.1 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.020
+[   0.81s] TRACE t=20971 mode=COMP axis=ROLL tilt=-0.01 rate_dps=0.2 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.016
+[   0.88s] TRACE t=21071 mode=COMP axis=ROLL tilt=-0.02 rate_dps=0.1 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.017
+[   1.01s] COMP=ON TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1500 (not measured) t=21159 state=READY pitch=0.10 roll=-0.01 accel_g=1.022 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=NO TARGET reason=BEYOND RANGE
+[   1.01s] TRACE t=21183 mode=COMP axis=ROLL tilt=-0.02 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.021
+[   1.20s] TRACE t=21372 mode=COMP axis=ROLL tilt=-0.00 rate_dps=0.2 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.011
+[   1.31s] TRACE t=21472 mode=COMP axis=ROLL tilt=0.02 rate_dps=0.2 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.020

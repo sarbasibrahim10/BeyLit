@@ -1,0 +1,25 @@
+HOLD STILL: calibration attempt 1/3
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=490504 state=CALIBRATING pitch=null roll=null accel_g=1.015 samples=0 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=491004 state=CALIBRATING pitch=null roll=null accel_g=1.018 samples=0 fault=NONE OLED=initialized
+CAL pose unsuitable: pitch=-39.6 roll=-169.7 deg
+IMU ERROR: REST BOARD FLAT; servo OFF, compensation OFF
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=491504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=492004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=492504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=493004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=493504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=494004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=494504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=495004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=495504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=496004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=496504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=497004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=497504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=498004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=498504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=499004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=499504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=500004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=500504 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=501004 state=SENSOR_ERROR pitch=null roll=null accel_g=1.019 samples=0 fault=REST BOARD FLAT OLED=initialized

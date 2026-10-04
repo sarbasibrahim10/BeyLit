@@ -1,0 +1,5 @@
+COMP ON: 60-second limited test, 1450..1550 us. COMP OFF stops signal.
+COMP=ON axis=ROLL sign=-1 command_us=1464 (not measured) t=3875004 state=READY pitch=21.21 roll=28.66 accel_g=1.035 samples=150 fault=NONE OLED=initialized
+COMP=ON axis=ROLL sign=-1 command_us=1450 (not measured) t=3875504 state=READY pitch=21.27 roll=29.01 accel_g=1.035 samples=150 fault=NONE OLED=initialized
+COMP=ON axis=ROLL sign=-1 command_us=1450 (not measured) t=3876004 state=READY pitch=21.30 roll=29.42 accel_g=1.038 samples=150 fault=NONE OLED=initialized
+COMP=ON axis=ROLL sign=-1 command_us=1450 (not measured) t=3876504 state=READY pitch=21.80 roll=29.40 accel_g=1.034 samples=150 fault=NONE OLED=initialized

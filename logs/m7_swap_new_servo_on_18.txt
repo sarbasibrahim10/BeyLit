@@ -1,0 +1,104 @@
+--- session 2026-10-04 10:28:52 steps=['WAIT:3', 'SERVO TEST 1']
+[   0.50s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=349500 state=READY pitch=-30.10 roll=98.24 accel_g=0.952 samples=150 fault=NONE OLED=initialized
+[   0.99s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=350000 state=READY pitch=-11.33 roll=97.54 accel_g=1.037 samples=150 fault=NONE OLED=initialized
+[   1.49s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=350500 state=READY pitch=-1.51 roll=97.78 accel_g=1.017 samples=150 fault=NONE OLED=initialized
+[   1.99s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=351000 state=READY pitch=6.26 roll=113.40 accel_g=0.997 samples=150 fault=NONE OLED=initialized
+[   2.50s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=351500 state=READY pitch=6.02 roll=115.45 accel_g=0.967 samples=150 fault=NONE OLED=initialized
+[   3.00s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=352000 state=READY pitch=5.79 roll=116.70 accel_g=0.991 samples=150 fault=NONE OLED=initialized
+[   3.00s] >>> SENT SERVO TEST 1
+[   3.12s] SERVO TEST 1 GPIO18: neutral then 1450 -> 1550 -> 1500 us; commanded position only.
+[   3.50s] COMP=OFF TEST=1 signs=-1,-1 command_us=1500,1519 (not measured) t=352500 state=READY pitch=5.03 roll=116.50 accel_g=1.010 samples=150 fault=NONE OLED=initialized
+[   4.02s] COMP=OFF TEST=1 signs=-1,-1 command_us=1500,1519 (not measured) t=353000 state=READY pitch=5.55 roll=106.47 accel_g=0.982 samples=150 fault=NONE OLED=initialized
+[   4.14s] TRACE t=353117 mode=TEST pitch=6.59 roll=107.34 target_us=1450,1500 command_us=1499,1519 attached=1,0 accel_g=0.981
+[   4.20s] TRACE t=353237 mode=TEST pitch=7.59 roll=108.99 target_us=1450,1500 command_us=1496,1519 attached=1,0 accel_g=0.978
+[   4.33s] TRACE t=353357 mode=TEST pitch=7.95 roll=111.13 target_us=1450,1500 command_us=1493,1519 attached=1,0 accel_g=0.989
+[   4.45s] TRACE t=353477 mode=TEST pitch=8.24 roll=112.79 target_us=1450,1500 command_us=1490,1519 attached=1,0 accel_g=0.992
+[   4.52s] COMP=OFF TEST=1 signs=-1,-1 command_us=1490,1519 (not measured) t=353500 state=READY pitch=8.33 roll=113.10 accel_g=0.987 samples=150 fault=NONE OLED=initialized
+[   4.58s] TRACE t=353617 mode=TEST pitch=7.78 roll=113.59 target_us=1450,1500 command_us=1489,1519 attached=1,0 accel_g=0.995
+[   4.70s] TRACE t=353737 mode=TEST pitch=7.48 roll=114.04 target_us=1450,1500 command_us=1486,1519 attached=1,0 accel_g=0.994
+[   4.83s] TRACE t=353857 mode=TEST pitch=7.01 roll=114.33 target_us=1450,1500 command_us=1483,1519 attached=1,0 accel_g=0.979
+[   4.97s] TRACE t=353977 mode=TEST pitch=6.74 roll=114.43 target_us=1450,1500 command_us=1480,1519 attached=1,0 accel_g=0.994
+[   4.97s] COMP=OFF TEST=1 signs=-1,-1 command_us=1480,1519 (not measured) t=354000 state=READY pitch=6.70 roll=113.97 accel_g=1.037 samples=150 fault=NONE OLED=initialized
+[   5.09s] TRACE t=354117 mode=TEST pitch=10.66 roll=103.74 target_us=1450,1500 command_us=1479,1519 attached=1,0 accel_g=1.014
+[   5.22s] TRACE t=354237 mode=TEST pitch=10.72 roll=96.25 target_us=1450,1500 command_us=1476,1519 attached=1,0 accel_g=0.978
+[   5.34s] TRACE t=354357 mode=TEST pitch=11.96 roll=91.25 target_us=1450,1500 command_us=1473,1519 attached=1,0 accel_g=1.017
+[   5.47s] TRACE t=354477 mode=TEST pitch=13.58 roll=96.65 target_us=1450,1500 command_us=1470,1519 attached=1,0 accel_g=0.900
+[   5.47s] COMP=OFF TEST=1 signs=-1,-1 command_us=1470,1519 (not measured) t=354500 state=READY pitch=13.61 roll=100.80 accel_g=0.926 samples=150 fault=NONE OLED=initialized
+[   5.59s] TRACE t=354617 mode=TEST pitch=16.99 roll=113.26 target_us=1450,1500 command_us=1469,1519 attached=1,0 accel_g=1.095
+[   5.74s] TRACE t=354737 mode=TEST pitch=14.22 roll=116.46 target_us=1450,1500 command_us=1466,1519 attached=1,0 accel_g=0.960
+[   5.84s] TRACE t=354857 mode=TEST pitch=9.79 roll=110.93 target_us=1450,1500 command_us=1463,1519 attached=1,0 accel_g=1.068
+[   5.97s] TRACE t=354977 mode=TEST pitch=8.57 roll=97.64 target_us=1450,1500 command_us=1460,1519 attached=1,0 accel_g=0.950
+[   5.97s] COMP=OFF TEST=1 signs=-1,-1 command_us=1460,1519 (not measured) t=355000 state=READY pitch=9.00 roll=96.78 accel_g=0.975 samples=150 fault=NONE OLED=initialized
+[   6.09s] TRACE t=355117 mode=TEST pitch=10.58 roll=105.01 target_us=1450,1500 command_us=1459,1519 attached=1,0 accel_g=0.997
+[   6.22s] TRACE t=355237 mode=TEST pitch=13.43 roll=117.03 target_us=1450,1500 command_us=1456,1519 attached=1,0 accel_g=0.961
+[   6.34s] TRACE t=355357 mode=TEST pitch=14.02 roll=120.98 target_us=1450,1500 command_us=1453,1519 attached=1,0 accel_g=1.080
+[   6.49s] TRACE t=355477 mode=TEST pitch=9.61 roll=113.23 target_us=1450,1500 command_us=1450,1519 attached=1,0 accel_g=0.987
+[   6.49s] COMP=OFF TEST=1 signs=-1,-1 command_us=1450,1519 (not measured) t=355500 state=READY pitch=8.44 roll=111.09 accel_g=0.943 samples=150 fault=NONE OLED=initialized
+[   6.61s] TRACE t=355617 mode=TEST pitch=10.42 roll=111.17 target_us=1550,1500 command_us=1451,1519 attached=1,0 accel_g=0.938
+[   6.74s] TRACE t=355737 mode=TEST pitch=10.94 roll=113.55 target_us=1550,1500 command_us=1454,1519 attached=1,0 accel_g=0.925
+[   6.84s] TRACE t=355857 mode=TEST pitch=9.93 roll=111.99 target_us=1550,1500 command_us=1457,1519 attached=1,0 accel_g=1.032
+[   6.97s] TRACE t=355977 mode=TEST pitch=5.24 roll=106.77 target_us=1550,1500 command_us=1460,1519 attached=1,0 accel_g=0.774
+[   6.97s] COMP=OFF TEST=1 signs=-1,-1 command_us=1460,1519 (not measured) t=356000 state=READY pitch=4.65 roll=106.35 accel_g=0.828 samples=150 fault=ACCEL CORRECTION OFF OLED=initialized
+[   7.09s] TRACE t=356117 mode=TEST pitch=11.21 roll=106.88 target_us=1550,1500 command_us=1461,1519 attached=1,0 accel_g=0.934
+[   7.24s] TRACE t=356237 mode=TEST pitch=18.82 roll=110.78 target_us=1550,1500 command_us=1464,1519 attached=1,0 accel_g=1.132
+[   7.36s] TRACE t=356357 mode=TEST pitch=21.47 roll=113.37 target_us=1550,1500 command_us=1467,1519 attached=1,0 accel_g=1.087
+[   7.47s] TRACE t=356477 mode=TEST pitch=14.18 roll=113.66 target_us=1550,1500 command_us=1470,1519 attached=1,0 accel_g=1.114
+[   7.47s] COMP=OFF TEST=1 signs=-1,-1 command_us=1470,1519 (not measured) t=356500 state=READY pitch=11.50 roll=113.03 accel_g=0.884 samples=150 fault=NONE OLED=initialized
+[   7.59s] TRACE t=356617 mode=TEST pitch=14.14 roll=115.06 target_us=1550,1500 command_us=1471,1519 attached=1,0 accel_g=0.853
+[   7.72s] TRACE t=356737 mode=TEST pitch=16.26 roll=109.40 target_us=1550,1500 command_us=1474,1519 attached=1,0 accel_g=0.975
+[   7.84s] TRACE t=356857 mode=TEST pitch=19.89 roll=108.50 target_us=1550,1500 command_us=1477,1519 attached=1,0 accel_g=1.086
+[   7.97s] TRACE t=356977 mode=TEST pitch=14.07 roll=107.30 target_us=1550,1500 command_us=1480,1519 attached=1,0 accel_g=0.907
+[   7.97s] COMP=OFF TEST=1 signs=-1,-1 command_us=1480,1519 (not measured) t=357000 state=READY pitch=13.24 roll=107.10 accel_g=1.044 samples=150 fault=NONE OLED=initialized
+[   8.09s] TRACE t=357117 mode=TEST pitch=11.45 roll=103.09 target_us=1550,1500 command_us=1481,1519 attached=1,0 accel_g=0.892
+[   8.22s] TRACE t=357237 mode=TEST pitch=15.22 roll=101.14 target_us=1550,1500 command_us=1484,1519 attached=1,0 accel_g=0.978
+[   8.34s] TRACE t=357357 mode=TEST pitch=23.77 roll=105.84 target_us=1550,1500 command_us=1487,1519 attached=1,0 accel_g=1.072
+[   8.45s] TRACE t=357477 mode=TEST pitch=20.08 roll=108.24 target_us=1550,1500 command_us=1490,1519 attached=1,0 accel_g=1.056
+[   8.52s] COMP=OFF TEST=1 signs=-1,-1 command_us=1490,1519 (not measured) t=357500 state=READY pitch=17.77 roll=107.68 accel_g=0.878 samples=150 fault=NONE OLED=initialized
+[   8.58s] TRACE t=357617 mode=TEST pitch=13.59 roll=105.48 target_us=1550,1500 command_us=1491,1519 attached=1,0 accel_g=0.899
+[   8.70s] TRACE t=357737 mode=TEST pitch=13.61 roll=101.22 target_us=1550,1500 command_us=1494,1519 attached=1,0 accel_g=1.323
+[   8.83s] TRACE t=357857 mode=TEST pitch=16.55 roll=75.21 target_us=1550,1500 command_us=1497,1519 attached=1,0 accel_g=0.878
+[   8.95s] TRACE t=357977 mode=TEST pitch=20.80 roll=87.17 target_us=1550,1500 command_us=1500,1519 attached=1,0 accel_g=1.195
+[   9.02s] COMP=OFF TEST=1 signs=-1,-1 command_us=1500,1519 (not measured) t=358000 state=READY pitch=20.96 roll=88.56 accel_g=1.053 samples=150 fault=NONE OLED=initialized
+[   9.08s] TRACE t=358117 mode=TEST pitch=23.58 roll=103.25 target_us=1550,1500 command_us=1501,1519 attached=1,0 accel_g=1.033
+[   9.22s] TRACE t=358237 mode=TEST pitch=19.34 roll=112.59 target_us=1550,1500 command_us=1504,1519 attached=1,0 accel_g=0.959
+[   9.34s] TRACE t=358357 mode=TEST pitch=11.54 roll=104.22 target_us=1550,1500 command_us=1507,1519 attached=1,0 accel_g=0.889
+[   9.47s] TRACE t=358477 mode=TEST pitch=12.61 roll=87.12 target_us=1550,1500 command_us=1510,1519 attached=1,0 accel_g=1.324
+[   9.47s] COMP=OFF TEST=1 signs=-1,-1 command_us=1510,1519 (not measured) t=358500 state=READY pitch=12.30 roll=86.04 accel_g=0.797 samples=150 fault=ACCEL CORRECTION OFF OLED=initialized
+[   9.59s] TRACE t=358617 mode=TEST pitch=15.85 roll=109.09 target_us=1550,1500 command_us=1511,1519 attached=1,0 accel_g=1.099
+[   9.72s] TRACE t=358737 mode=TEST pitch=10.64 roll=121.85 target_us=1550,1500 command_us=1514,1519 attached=1,0 accel_g=0.914
+[   9.84s] TRACE t=358857 mode=TEST pitch=2.27 roll=110.97 target_us=1550,1500 command_us=1517,1519 attached=1,0 accel_g=1.012
+[   9.97s] TRACE t=358977 mode=TEST pitch=3.04 roll=91.30 target_us=1550,1500 command_us=1520,1519 attached=1,0 accel_g=1.026
+[   9.97s] COMP=OFF TEST=1 signs=-1,-1 command_us=1520,1519 (not measured) t=359000 state=READY pitch=4.68 roll=90.44 accel_g=1.065 samples=150 fault=NONE OLED=initialized
+[  10.09s] TRACE t=359117 mode=TEST pitch=9.45 roll=102.80 target_us=1550,1500 command_us=1521,1519 attached=1,0 accel_g=0.892
+[  10.22s] TRACE t=359237 mode=TEST pitch=10.28 roll=115.53 target_us=1550,1500 command_us=1524,1519 attached=1,0 accel_g=1.058
+[  10.34s] TRACE t=359357 mode=TEST pitch=5.64 roll=111.04 target_us=1550,1500 command_us=1527,1519 attached=1,0 accel_g=1.067
+[  10.47s] TRACE t=359477 mode=TEST pitch=2.86 roll=93.65 target_us=1550,1500 command_us=1530,1519 attached=1,0 accel_g=1.042
+[  10.47s] COMP=OFF TEST=1 signs=-1,-1 command_us=1530,1519 (not measured) t=359500 state=READY pitch=2.67 roll=92.22 accel_g=0.754 samples=150 fault=ACCEL CORRECTION OFF OLED=initialized
+[  10.59s] TRACE t=359617 mode=TEST pitch=7.68 roll=97.57 target_us=1550,1500 command_us=1531,1519 attached=1,0 accel_g=1.014
+[  10.72s] TRACE t=359737 mode=TEST pitch=13.57 roll=109.93 target_us=1550,1500 command_us=1534,1519 attached=1,0 accel_g=1.066
+[  10.84s] TRACE t=359857 mode=TEST pitch=8.10 roll=113.69 target_us=1550,1500 command_us=1537,1519 attached=1,0 accel_g=1.123
+[  10.95s] TRACE t=359977 mode=TEST pitch=-1.77 roll=96.43 target_us=1550,1500 command_us=1540,1519 attached=1,0 accel_g=0.982
+[  11.02s] COMP=OFF TEST=1 signs=-1,-1 command_us=1540,1519 (not measured) t=360000 state=READY pitch=-0.35 roll=94.19 accel_g=1.067 samples=150 fault=NONE OLED=initialized
+[  11.08s] TRACE t=360117 mode=TEST pitch=4.64 roll=100.16 target_us=1550,1500 command_us=1541,1519 attached=1,0 accel_g=0.983
+[  11.20s] TRACE t=360237 mode=TEST pitch=10.10 roll=110.23 target_us=1550,1500 command_us=1544,1519 attached=1,0 accel_g=1.082
+[  11.34s] TRACE t=360357 mode=TEST pitch=8.34 roll=119.51 target_us=1550,1500 command_us=1547,1519 attached=1,0 accel_g=1.125
+[  11.45s] TRACE t=360477 mode=TEST pitch=0.69 roll=105.65 target_us=1550,1500 command_us=1550,1519 attached=1,0 accel_g=1.034
+[  11.52s] COMP=OFF TEST=1 signs=-1,-1 command_us=1550,1519 (not measured) t=360500 state=READY pitch=-0.63 roll=102.90 accel_g=0.920 samples=150 fault=NONE OLED=initialized
+[  11.58s] TRACE t=360617 mode=TEST pitch=2.14 roll=99.88 target_us=1500,1500 command_us=1549,1519 attached=1,0 accel_g=0.861
+[  11.72s] TRACE t=360737 mode=TEST pitch=8.71 roll=104.48 target_us=1500,1500 command_us=1546,1519 attached=1,0 accel_g=1.097
+[  11.84s] TRACE t=360857 mode=TEST pitch=11.94 roll=114.43 target_us=1500,1500 command_us=1543,1519 attached=1,0 accel_g=1.059
+[  11.97s] TRACE t=360977 mode=TEST pitch=9.29 roll=123.37 target_us=1500,1500 command_us=1540,1519 attached=1,0 accel_g=1.138
+[  11.97s] COMP=OFF TEST=1 signs=-1,-1 command_us=1540,1519 (not measured) t=361000 state=READY pitch=7.91 roll=123.16 accel_g=1.126 samples=150 fault=NONE OLED=initialized
+[  12.09s] TRACE t=361117 mode=TEST pitch=3.55 roll=113.59 target_us=1500,1500 command_us=1539,1519 attached=1,0 accel_g=1.070
+[  12.22s] TRACE t=361237 mode=TEST pitch=0.36 roll=99.35 target_us=1500,1500 command_us=1536,1519 attached=1,0 accel_g=0.949
+[  12.34s] TRACE t=361357 mode=TEST pitch=4.01 roll=92.77 target_us=1500,1500 command_us=1533,1519 attached=1,0 accel_g=0.997
+[  12.47s] TRACE t=361477 mode=TEST pitch=8.72 roll=100.51 target_us=1500,1500 command_us=1530,1519 attached=1,0 accel_g=1.078
+[  12.47s] COMP=OFF TEST=1 signs=-1,-1 command_us=1530,1519 (not measured) t=361500 state=READY pitch=9.22 roll=102.78 accel_g=1.011 samples=150 fault=NONE OLED=initialized
+[  12.59s] TRACE t=361617 mode=TEST pitch=3.17 roll=108.26 target_us=1500,1500 command_us=1529,1519 attached=1,0 accel_g=1.036
+[  12.72s] TRACE t=361737 mode=TEST pitch=0.23 roll=109.12 target_us=1500,1500 command_us=1526,1519 attached=1,0 accel_g=1.028
+[  12.84s] TRACE t=361857 mode=TEST pitch=-4.80 roll=96.57 target_us=1500,1500 command_us=1523,1519 attached=1,0 accel_g=1.181
+[  12.99s] TRACE t=361977 mode=TEST pitch=-1.61 roll=83.53 target_us=1500,1500 command_us=1520,1519 attached=1,0 accel_g=0.789
+[  12.99s] COMP=OFF TEST=1 signs=-1,-1 command_us=1520,1519 (not measured) t=362000 state=READY pitch=-1.03 roll=83.94 accel_g=0.776 samples=150 fault=ACCEL CORRECTION OFF OLED=initialized
+[  13.11s] SERVO SIGNAL OFF t=362117 reason=TEST 10 s LIMIT last_command_us=1520,1519
+[  13.49s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=362500 state=READY pitch=-6.18 roll=101.21 accel_g=0.918 samples=150 fault=NONE OLED=initialized
+[  13.99s] COMP=OFF TEST=0 signs=-1,-1 command_us=1520,1519 (not measured) t=363000 state=READY pitch=4.23 roll=115.19 accel_g=1.084 samples=150 fault=NONE OLED=initialized

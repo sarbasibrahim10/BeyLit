@@ -1,0 +1,215 @@
+--- session 2026-10-04 11:03:51 steps=['WAIT:3', 'SERVO TEST']
+[   0.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1500 (not measured) t=71500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   0.86s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1500 (not measured) t=72000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   1.31s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1500 (not measured) t=72500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   1.86s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1500 (not measured) t=73000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   2.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1500 (not measured) t=73500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   2.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1500 (not measured) t=74000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   3.00s] >>> SENT SERVO TEST
+[   3.06s] SERVO TEST GPIO27: neutral then 1450 -> 1550 -> 1500 us; commanded position only.
+[   3.31s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1500 (not measured) t=74500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   3.81s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1500 (not measured) t=75000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   4.06s] TRACE t=75216 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1499 attached=1 accel_g=1.022
+[   4.12s] TRACE t=75336 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1496 attached=1 accel_g=1.022
+[   4.25s] TRACE t=75456 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1493 attached=1 accel_g=1.022
+[   4.33s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1492 (not measured) t=75500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   4.45s] TRACE t=75615 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1491 attached=1 accel_g=1.022
+[   4.58s] TRACE t=75734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1488 attached=1 accel_g=1.022
+[   4.70s] TRACE t=75854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1485 attached=1 accel_g=1.022
+[   4.81s] TRACE t=75974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1482 attached=1 accel_g=1.022
+[   4.81s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1482 (not measured) t=76000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   4.95s] TRACE t=76114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1481 attached=1 accel_g=1.022
+[   5.08s] TRACE t=76234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1478 attached=1 accel_g=1.022
+[   5.19s] TRACE t=76354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1475 attached=1 accel_g=1.022
+[   5.31s] TRACE t=76474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1472 attached=1 accel_g=1.022
+[   5.31s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1472 (not measured) t=76500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   5.44s] TRACE t=76614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1471 attached=1 accel_g=1.022
+[   5.56s] TRACE t=76734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1468 attached=1 accel_g=1.022
+[   5.70s] TRACE t=76854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1465 attached=1 accel_g=1.022
+[   5.83s] TRACE t=76974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1462 attached=1 accel_g=1.022
+[   5.83s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1462 (not measured) t=77000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   5.95s] TRACE t=77114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1461 attached=1 accel_g=1.022
+[   6.08s] TRACE t=77234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1458 attached=1 accel_g=1.022
+[   6.14s] TRACE t=77354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1455 attached=1 accel_g=1.022
+[   6.28s] TRACE t=77474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1452 attached=1 accel_g=1.022
+[   6.34s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1452 (not measured) t=77500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   6.47s] TRACE t=77614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1451 attached=1 accel_g=1.022
+[   6.53s] TRACE t=77734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1452 attached=1 accel_g=1.022
+[   6.66s] TRACE t=77854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1455 attached=1 accel_g=1.022
+[   6.78s] TRACE t=77974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1458 attached=1 accel_g=1.022
+[   6.84s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1458 (not measured) t=78000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   6.97s] TRACE t=78114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1459 attached=1 accel_g=1.022
+[   7.03s] TRACE t=78234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1462 attached=1 accel_g=1.022
+[   7.16s] TRACE t=78354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1465 attached=1 accel_g=1.022
+[   7.28s] TRACE t=78474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1468 attached=1 accel_g=1.022
+[   7.34s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1468 (not measured) t=78500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   7.41s] TRACE t=78614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1469 attached=1 accel_g=1.022
+[   7.53s] TRACE t=78734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1472 attached=1 accel_g=1.022
+[   7.66s] TRACE t=78854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1475 attached=1 accel_g=1.022
+[   7.78s] TRACE t=78974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1478 attached=1 accel_g=1.022
+[   7.84s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1478 (not measured) t=79000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   7.91s] TRACE t=79114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1479 attached=1 accel_g=1.022
+[   8.03s] TRACE t=79234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1482 attached=1 accel_g=1.022
+[   8.17s] TRACE t=79354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1485 attached=1 accel_g=1.022
+[   8.30s] TRACE t=79474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1488 attached=1 accel_g=1.022
+[   8.36s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1488 (not measured) t=79500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   8.42s] TRACE t=79614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1489 attached=1 accel_g=1.022
+[   8.55s] TRACE t=79734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1492 attached=1 accel_g=1.022
+[   8.67s] TRACE t=79854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1495 attached=1 accel_g=1.022
+[   8.80s] TRACE t=79974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1498 attached=1 accel_g=1.022
+[   8.86s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1498 (not measured) t=80000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   8.92s] TRACE t=80114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1499 attached=1 accel_g=1.022
+[   9.05s] TRACE t=80234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1502 attached=1 accel_g=1.022
+[   9.17s] TRACE t=80354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1505 attached=1 accel_g=1.022
+[   9.30s] TRACE t=80474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1508 attached=1 accel_g=1.022
+[   9.30s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1508 (not measured) t=80500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   9.42s] TRACE t=80614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1509 attached=1 accel_g=1.022
+[   9.55s] TRACE t=80734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1512 attached=1 accel_g=1.022
+[   9.67s] TRACE t=80854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1515 attached=1 accel_g=1.022
+[   9.80s] TRACE t=80974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1518 attached=1 accel_g=1.022
+[   9.80s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1518 (not measured) t=81000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   9.92s] TRACE t=81114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1519 attached=1 accel_g=1.022
+[  10.05s] TRACE t=81234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1522 attached=1 accel_g=1.022
+[  10.19s] TRACE t=81354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1525 attached=1 accel_g=1.022
+[  10.31s] TRACE t=81474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1528 attached=1 accel_g=1.022
+[  10.31s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1528 (not measured) t=81500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  10.44s] TRACE t=81614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1529 attached=1 accel_g=1.022
+[  10.56s] TRACE t=81734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1532 attached=1 accel_g=1.022
+[  10.69s] TRACE t=81854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1535 attached=1 accel_g=1.022
+[  10.80s] TRACE t=81974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1538 attached=1 accel_g=1.022
+[  10.80s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1538 (not measured) t=82000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  10.92s] TRACE t=82114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1539 attached=1 accel_g=1.022
+[  11.05s] TRACE t=82234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1542 attached=1 accel_g=1.022
+[  11.17s] TRACE t=82354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1545 attached=1 accel_g=1.022
+[  11.31s] TRACE t=82474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1548 attached=1 accel_g=1.022
+[  11.31s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1548 (not measured) t=82500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  11.44s] TRACE t=82614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1549 attached=1 accel_g=1.022
+[  11.56s] TRACE t=82734 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1548 attached=1 accel_g=1.022
+[  11.69s] TRACE t=82854 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1545 attached=1 accel_g=1.022
+[  11.81s] TRACE t=82974 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1542 attached=1 accel_g=1.022
+[  11.81s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1542 (not measured) t=83000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  11.94s] TRACE t=83114 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1541 attached=1 accel_g=1.022
+[  12.06s] TRACE t=83234 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1538 attached=1 accel_g=1.022
+[  12.19s] TRACE t=83354 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1535 attached=1 accel_g=1.022
+[  12.31s] TRACE t=83474 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1532 attached=1 accel_g=1.022
+[  12.31s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1532 (not measured) t=83500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  12.44s] TRACE t=83614 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1531 attached=1 accel_g=1.022
+[  12.56s] TRACE t=83734 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1528 attached=1 accel_g=1.022
+[  12.69s] TRACE t=83854 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1525 attached=1 accel_g=1.022
+[  12.81s] TRACE t=83974 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1522 attached=1 accel_g=1.022
+[  12.81s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1522 (not measured) t=84000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  12.94s] TRACE t=84114 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1521 attached=1 accel_g=1.022
+[  13.06s] SERVO SIGNAL OFF t=84216 reason=TEST 10 s LIMIT last_command_us=1519
+[  13.31s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=84500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  13.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=85000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  14.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=85500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+--- session 2026-10-04 11:04:36 steps=['WAIT:5', 'SERVO TEST']
+[   0.06s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=116500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   0.56s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=117000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   1.08s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=117500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   1.52s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=118000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   2.02s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=118500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   2.52s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=119000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   3.02s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=119500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   3.52s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=120000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   4.02s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=120500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   4.53s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=121000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   5.02s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=121500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   5.02s] >>> SENT SERVO TEST
+[   5.16s] SERVO TEST GPIO27: neutral then 1450 -> 1550 -> 1500 us; commanded position only.
+[   5.53s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1500 (not measured) t=122000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   6.03s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1500 (not measured) t=122500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   6.16s] TRACE t=122616 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1499 attached=1 accel_g=1.022
+[   6.28s] TRACE t=122736 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1496 attached=1 accel_g=1.022
+[   6.41s] TRACE t=122856 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1493 attached=1 accel_g=1.022
+[   6.53s] TRACE t=122976 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1490 attached=1 accel_g=1.022
+[   6.53s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1490 (not measured) t=123000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   6.66s] TRACE t=123114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1489 attached=1 accel_g=1.022
+[   6.78s] TRACE t=123234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1486 attached=1 accel_g=1.022
+[   6.91s] TRACE t=123354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1483 attached=1 accel_g=1.022
+[   7.03s] TRACE t=123474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1480 attached=1 accel_g=1.022
+[   7.03s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1480 (not measured) t=123500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   7.16s] TRACE t=123614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1479 attached=1 accel_g=1.022
+[   7.30s] TRACE t=123734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1476 attached=1 accel_g=1.022
+[   7.41s] TRACE t=123854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1473 attached=1 accel_g=1.022
+[   7.53s] TRACE t=123974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1470 attached=1 accel_g=1.022
+[   7.53s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1470 (not measured) t=124000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   7.66s] TRACE t=124114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1469 attached=1 accel_g=1.022
+[   7.78s] TRACE t=124234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1466 attached=1 accel_g=1.022
+[   7.92s] TRACE t=124354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1463 attached=1 accel_g=1.022
+[   8.05s] TRACE t=124474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1460 attached=1 accel_g=1.022
+[   8.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1460 (not measured) t=124500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   8.17s] TRACE t=124614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1459 attached=1 accel_g=1.022
+[   8.30s] TRACE t=124734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1456 attached=1 accel_g=1.022
+[   8.41s] TRACE t=124854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1453 attached=1 accel_g=1.022
+[   8.53s] TRACE t=124974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1450 attached=1 accel_g=1.022
+[   8.53s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1450 (not measured) t=125000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   8.67s] TRACE t=125114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1451 attached=1 accel_g=1.022
+[   8.78s] TRACE t=125234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1454 attached=1 accel_g=1.022
+[   8.92s] TRACE t=125354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1457 attached=1 accel_g=1.022
+[   9.05s] TRACE t=125474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1460 attached=1 accel_g=1.022
+[   9.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1460 (not measured) t=125500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   9.17s] TRACE t=125614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1461 attached=1 accel_g=1.022
+[   9.30s] TRACE t=125734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1464 attached=1 accel_g=1.022
+[   9.42s] TRACE t=125854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1467 attached=1 accel_g=1.022
+[   9.55s] TRACE t=125974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1470 attached=1 accel_g=1.022
+[   9.55s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1470 (not measured) t=126000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   9.67s] TRACE t=126114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1471 attached=1 accel_g=1.022
+[   9.78s] TRACE t=126234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1474 attached=1 accel_g=1.022
+[   9.92s] TRACE t=126354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1477 attached=1 accel_g=1.022
+[  10.05s] TRACE t=126474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1480 attached=1 accel_g=1.022
+[  10.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1480 (not measured) t=126500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  10.17s] TRACE t=126614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1481 attached=1 accel_g=1.022
+[  10.30s] TRACE t=126734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1484 attached=1 accel_g=1.022
+[  10.42s] TRACE t=126854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1487 attached=1 accel_g=1.022
+[  10.49s] TRACE t=126974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1490 attached=1 accel_g=1.022
+[  10.55s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1490 (not measured) t=127000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  10.67s] TRACE t=127114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1491 attached=1 accel_g=1.022
+[  10.78s] TRACE t=127234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1494 attached=1 accel_g=1.022
+[  10.92s] TRACE t=127354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1497 attached=1 accel_g=1.022
+[  11.05s] TRACE t=127474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1500 attached=1 accel_g=1.022
+[  11.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1500 (not measured) t=127500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  11.17s] TRACE t=127614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1501 attached=1 accel_g=1.022
+[  11.30s] TRACE t=127734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1504 attached=1 accel_g=1.022
+[  11.42s] TRACE t=127854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1507 attached=1 accel_g=1.022
+[  11.55s] TRACE t=127974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1510 attached=1 accel_g=1.022
+[  11.55s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1510 (not measured) t=128000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  11.67s] TRACE t=128114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1511 attached=1 accel_g=1.022
+[  11.80s] TRACE t=128234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1514 attached=1 accel_g=1.022
+[  11.92s] TRACE t=128354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1517 attached=1 accel_g=1.022
+[  11.99s] TRACE t=128474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1520 attached=1 accel_g=1.022
+[  12.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1520 (not measured) t=128500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  12.17s] TRACE t=128614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1521 attached=1 accel_g=1.022
+[  12.30s] TRACE t=128734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1524 attached=1 accel_g=1.022
+[  12.36s] TRACE t=128854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1527 attached=1 accel_g=1.022
+[  12.49s] TRACE t=128974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1530 attached=1 accel_g=1.022
+[  12.55s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1530 (not measured) t=129000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  12.67s] TRACE t=129114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1531 attached=1 accel_g=1.022
+[  12.80s] TRACE t=129234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1534 attached=1 accel_g=1.022
+[  12.92s] TRACE t=129354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1537 attached=1 accel_g=1.022
+[  12.99s] TRACE t=129474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1540 attached=1 accel_g=1.022
+[  13.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1540 (not measured) t=129500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  13.17s] TRACE t=129614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1541 attached=1 accel_g=1.022
+[  13.30s] TRACE t=129734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1544 attached=1 accel_g=1.022
+[  13.41s] TRACE t=129854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1547 attached=1 accel_g=1.022
+[  13.53s] TRACE t=129974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1550 attached=1 accel_g=1.022
+[  13.53s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1550 (not measured) t=130000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  13.66s] TRACE t=130114 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1549 attached=1 accel_g=1.022
+[  13.78s] TRACE t=130234 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1546 attached=1 accel_g=1.022
+[  13.91s] TRACE t=130354 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1543 attached=1 accel_g=1.022
+[  14.05s] TRACE t=130474 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1540 attached=1 accel_g=1.022
+[  14.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1540 (not measured) t=130500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  14.17s] TRACE t=130614 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1539 attached=1 accel_g=1.022
+[  14.30s] TRACE t=130734 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1536 attached=1 accel_g=1.022
+[  14.42s] TRACE t=130854 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1533 attached=1 accel_g=1.022
+[  14.49s] TRACE t=130974 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1530 attached=1 accel_g=1.022
+[  14.55s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1530 (not measured) t=131000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  14.67s] TRACE t=131114 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1529 attached=1 accel_g=1.022
+[  14.80s] TRACE t=131234 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1526 attached=1 accel_g=1.022
+[  14.86s] TRACE t=131354 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1523 attached=1 accel_g=1.022
+[  14.99s] TRACE t=131474 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1520 attached=1 accel_g=1.022
+[  15.05s] COMP=OFF TEST=ON axis=PITCH sign=-1 command_us=1520 (not measured) t=131500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  15.19s] TRACE t=131614 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1519 attached=1 accel_g=1.022
+[  15.19s] SERVO SIGNAL OFF t=131616 reason=TEST 10 s LIMIT last_command_us=1519
+[  15.55s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=132000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[  16.06s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=132500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized

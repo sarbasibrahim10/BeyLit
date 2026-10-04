@@ -1,0 +1,17 @@
+t=425500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+t=426000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+t=426500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+t=427000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+t=427500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+t=428000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+t=428500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+t=429000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+t=429500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+t=430000 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized
+t=430500 state=SENSOR_ERROR pitch=null roll=null accel_g=0.000 samples=0 servo=OFF compensation=OFF fault=IMU DRIVER INIT OLED=initialized

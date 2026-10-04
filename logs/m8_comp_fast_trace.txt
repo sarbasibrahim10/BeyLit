@@ -1,0 +1,128 @@
+--- session 2026-10-04 10:44:20 steps=['COMP ON', 'WAIT:45', 'COMP OFF']
+[   0.00s] >>> SENT COMP ON
+[   0.08s] COMP ON t=341747 axis=PITCH sign=-1 start_tilt=4.20: 60-second test, 1450..1550 us.
+[   0.14s] TRACE t=341847 mode=COMP axis=PITCH tilt=4.16 target_us=1458 command_us=1468 attached=1 accel_g=1.030
+[   0.26s] TRACE t=341947 mode=COMP axis=PITCH tilt=4.06 target_us=1460 command_us=1460 attached=1 accel_g=1.028
+[   0.33s] COMP=ON TEST=OFF axis=PITCH sign=-1 command_us=1460 (not measured) t=342000 state=READY pitch=3.97 roll=-25.11 accel_g=1.030 samples=150 fault=NONE OLED=initialized
+[   0.45s] TRACE t=342117 mode=COMP axis=PITCH tilt=5.44 target_us=1460 command_us=1460 attached=1 accel_g=1.034
+[   0.50s] TRACE t=342217 mode=COMP axis=PITCH tilt=5.54 target_us=1450 command_us=1450 attached=1 accel_g=1.034
+[   0.64s] TRACE t=342317 mode=COMP axis=PITCH tilt=5.37 target_us=1450 command_us=1450 attached=1 accel_g=1.029
+[   0.75s] TRACE t=342417 mode=COMP axis=PITCH tilt=5.72 target_us=1450 command_us=1450 attached=1 accel_g=1.020
+[   0.81s] COMP=ON TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=342500 state=READY pitch=5.62 roll=-24.70 accel_g=1.003 samples=150 fault=NONE OLED=initialized
+[   0.94s] TRACE t=342617 mode=COMP axis=PITCH tilt=4.48 target_us=1450 command_us=1450 attached=1 accel_g=1.020
+[   1.00s] TRACE t=342717 mode=COMP axis=PITCH tilt=3.56 target_us=1463 command_us=1463 attached=1 accel_g=1.046
+[   1.12s] TRACE t=342817 mode=COMP axis=PITCH tilt=2.62 target_us=1474 command_us=1474 attached=1 accel_g=1.018
+[   1.19s] TRACE t=342917 mode=COMP axis=PITCH tilt=2.71 target_us=1473 command_us=1473 attached=1 accel_g=1.016
+[   1.31s] COMP=ON TEST=OFF axis=PITCH sign=-1 command_us=1475 (not measured) t=343000 state=READY pitch=2.53 roll=-28.65 accel_g=1.033 samples=150 fault=NONE OLED=initialized
+[   1.44s] TRACE t=343117 mode=COMP axis=PITCH tilt=2.79 target_us=1475 command_us=1475 attached=1 accel_g=1.025
+[   1.50s] TRACE t=343217 mode=COMP axis=PITCH tilt=3.45 target_us=1469 command_us=1469 attached=1 accel_g=1.014
+[   1.64s] TRACE t=343317 mode=COMP axis=PITCH tilt=4.48 target_us=1457 command_us=1457 attached=1 accel_g=1.012
+[   1.75s] TRACE t=343417 mode=COMP axis=PITCH tilt=4.72 target_us=1451 command_us=1451 attached=1 accel_g=1.033
+[   1.81s] COMP=ON TEST=OFF axis=PITCH sign=-1 command_us=1453 (not measured) t=343500 state=READY pitch=4.73 roll=-18.57 accel_g=1.059 samples=150 fault=NONE OLED=initialized
+[   1.94s] TRACE t=343617 mode=COMP axis=PITCH tilt=4.54 target_us=1453 command_us=1453 attached=1 accel_g=1.021
+[   2.00s] TRACE t=343717 mode=COMP axis=PITCH tilt=4.03 target_us=1459 command_us=1459 attached=1 accel_g=1.001
+[   2.12s] TRACE t=343817 mode=COMP axis=PITCH tilt=3.20 target_us=1466 command_us=1466 attached=1 accel_g=1.057
+[   2.19s] TRACE t=343917 mode=COMP axis=PITCH tilt=2.89 target_us=1470 command_us=1470 attached=1 accel_g=1.028
+[   2.31s] COMP=ON TEST=OFF axis=PITCH sign=-1 command_us=1473 (not measured) t=344000 state=READY pitch=2.73 roll=-23.76 accel_g=1.034 samples=150 fault=NONE OLED=initialized
+[   2.44s] TRACE t=344117 mode=COMP axis=PITCH tilt=2.81 target_us=1473 command_us=1473 attached=1 accel_g=1.028
+[   2.50s] TRACE t=344217 mode=COMP axis=PITCH tilt=3.18 target_us=1470 command_us=1470 attached=1 accel_g=1.043
+[   2.62s] TRACE t=344317 mode=COMP axis=PITCH tilt=3.99 target_us=1463 command_us=1463 attached=1 accel_g=1.045
+[   2.75s] TRACE t=344417 mode=COMP axis=PITCH tilt=4.99 target_us=1451 command_us=1451 attached=1 accel_g=1.027
+[   2.83s] COMP=ON TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=344500 state=READY pitch=5.63 roll=-20.75 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[   2.95s] TRACE t=344617 mode=COMP axis=PITCH tilt=6.97 target_us=1450 command_us=1450 attached=1 accel_g=1.032
+[   3.01s] TRACE t=344717 mode=COMP axis=PITCH tilt=7.54 target_us=1450 command_us=1450 attached=1 accel_g=1.000
+[   3.14s] TRACE t=344817 mode=COMP axis=PITCH tilt=7.74 target_us=1450 command_us=1450 attached=1 accel_g=1.029
+[   3.20s] TRACE t=344917 mode=COMP axis=PITCH tilt=7.91 target_us=1450 command_us=1450 attached=1 accel_g=1.030
+[   3.33s] COMP=ON TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=345000 state=READY pitch=7.02 roll=-15.95 accel_g=1.041 samples=150 fault=NONE OLED=initialized
+[   3.39s] TRACE t=345117 mode=COMP axis=PITCH tilt=6.40 target_us=1450 command_us=1450 attached=1 accel_g=1.014
+[   3.51s] TRACE t=345217 mode=COMP axis=PITCH tilt=6.07 target_us=1450 command_us=1450 attached=1 accel_g=1.016
+[   3.64s] TRACE t=345317 mode=COMP axis=PITCH tilt=6.03 target_us=1450 command_us=1450 attached=1 accel_g=1.029
+[   3.70s] TRACE t=345417 mode=COMP axis=PITCH tilt=6.42 target_us=1450 command_us=1450 attached=1 accel_g=1.076
+[   3.76s] SERVO SIGNAL OFF t=345477 reason=ACCEL 1.174 g OUTSIDE 0.85..1.15 (moved too fast) last_command_us=1450
+[   3.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=345500 state=READY pitch=6.34 roll=-17.19 accel_g=1.035 samples=150 fault=NONE OLED=initialized
+[   4.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=346000 state=READY pitch=8.33 roll=-13.89 accel_g=1.027 samples=150 fault=NONE OLED=initialized
+[   4.78s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=346500 state=READY pitch=10.58 roll=-12.06 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[   5.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=347000 state=READY pitch=6.81 roll=-13.12 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[   5.78s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=347500 state=READY pitch=4.80 roll=-16.24 accel_g=1.036 samples=150 fault=NONE OLED=initialized
+[   6.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=348000 state=READY pitch=6.21 roll=-16.62 accel_g=1.015 samples=150 fault=NONE OLED=initialized
+[   6.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=348500 state=READY pitch=4.98 roll=-17.79 accel_g=1.041 samples=150 fault=NONE OLED=initialized
+[   7.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=349000 state=READY pitch=7.48 roll=-21.98 accel_g=1.056 samples=150 fault=NONE OLED=initialized
+[   7.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=349500 state=READY pitch=10.83 roll=-22.65 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[   8.31s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=350000 state=READY pitch=13.81 roll=-26.86 accel_g=1.018 samples=150 fault=NONE OLED=initialized
+[   8.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=350500 state=READY pitch=15.06 roll=-27.76 accel_g=1.041 samples=150 fault=NONE OLED=initialized
+[   9.31s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=351000 state=READY pitch=3.56 roll=-25.99 accel_g=1.009 samples=150 fault=NONE OLED=initialized
+[   9.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=351500 state=READY pitch=11.57 roll=-25.08 accel_g=1.012 samples=150 fault=NONE OLED=initialized
+[  10.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=352000 state=READY pitch=2.25 roll=-18.84 accel_g=1.058 samples=150 fault=NONE OLED=initialized
+[  10.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=352500 state=READY pitch=6.42 roll=-20.67 accel_g=0.995 samples=150 fault=NONE OLED=initialized
+[  11.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=353000 state=READY pitch=10.39 roll=-23.19 accel_g=1.041 samples=150 fault=NONE OLED=initialized
+[  11.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=353500 state=READY pitch=10.99 roll=-29.63 accel_g=1.025 samples=150 fault=NONE OLED=initialized
+[  12.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=354000 state=READY pitch=12.86 roll=-29.62 accel_g=1.028 samples=150 fault=NONE OLED=initialized
+[  12.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=354500 state=READY pitch=13.56 roll=-29.51 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[  13.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=355000 state=READY pitch=10.60 roll=-26.03 accel_g=1.013 samples=150 fault=NONE OLED=initialized
+[  13.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=355500 state=READY pitch=-0.71 roll=-25.22 accel_g=1.068 samples=150 fault=NONE OLED=initialized
+[  14.34s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=356000 state=READY pitch=-6.36 roll=-25.58 accel_g=1.035 samples=150 fault=NONE OLED=initialized
+[  14.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=356500 state=READY pitch=-5.17 roll=-25.64 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[  15.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=357000 state=READY pitch=6.88 roll=-24.92 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[  15.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=357500 state=READY pitch=13.49 roll=-24.81 accel_g=1.034 samples=150 fault=NONE OLED=initialized
+[  16.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=358000 state=READY pitch=15.71 roll=-24.65 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[  16.84s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=358500 state=READY pitch=13.89 roll=-24.33 accel_g=1.029 samples=150 fault=NONE OLED=initialized
+[  17.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=359000 state=READY pitch=11.10 roll=-23.76 accel_g=1.005 samples=150 fault=NONE OLED=initialized
+[  17.78s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=359500 state=READY pitch=-2.49 roll=-22.48 accel_g=1.042 samples=150 fault=NONE OLED=initialized
+[  18.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=360000 state=READY pitch=-0.18 roll=-22.82 accel_g=1.034 samples=150 fault=NONE OLED=initialized
+[  18.78s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=360500 state=READY pitch=8.05 roll=-23.02 accel_g=1.031 samples=150 fault=NONE OLED=initialized
+[  19.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=361000 state=READY pitch=15.02 roll=-23.88 accel_g=1.035 samples=150 fault=NONE OLED=initialized
+[  19.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=361500 state=READY pitch=15.39 roll=-23.94 accel_g=1.031 samples=150 fault=NONE OLED=initialized
+[  20.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=362000 state=READY pitch=13.19 roll=-23.48 accel_g=1.020 samples=150 fault=NONE OLED=initialized
+[  20.78s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=362500 state=READY pitch=15.16 roll=-28.18 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[  21.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=363000 state=READY pitch=14.95 roll=-35.55 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[  21.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=363500 state=READY pitch=13.85 roll=-37.46 accel_g=1.030 samples=150 fault=NONE OLED=initialized
+[  22.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=364000 state=READY pitch=13.51 roll=-35.01 accel_g=1.023 samples=150 fault=NONE OLED=initialized
+[  22.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=364500 state=READY pitch=12.92 roll=-28.95 accel_g=1.027 samples=150 fault=NONE OLED=initialized
+[  23.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=365000 state=READY pitch=12.57 roll=-28.06 accel_g=1.057 samples=150 fault=NONE OLED=initialized
+[  23.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=365500 state=READY pitch=12.03 roll=-27.70 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[  24.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=366000 state=READY pitch=12.62 roll=-27.23 accel_g=1.037 samples=150 fault=NONE OLED=initialized
+[  24.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=366500 state=READY pitch=12.77 roll=-26.89 accel_g=1.042 samples=150 fault=NONE OLED=initialized
+[  25.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=367000 state=READY pitch=12.40 roll=-26.49 accel_g=1.034 samples=150 fault=NONE OLED=initialized
+[  25.78s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=367500 state=READY pitch=11.97 roll=-21.74 accel_g=1.015 samples=150 fault=NONE OLED=initialized
+[  26.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=368000 state=READY pitch=13.88 roll=-26.86 accel_g=0.998 samples=150 fault=NONE OLED=initialized
+[  26.78s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=368500 state=READY pitch=13.23 roll=-29.24 accel_g=1.029 samples=150 fault=NONE OLED=initialized
+[  27.28s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=369000 state=READY pitch=13.78 roll=-30.44 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[  27.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=369500 state=READY pitch=14.07 roll=-32.25 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[  28.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=370000 state=READY pitch=13.48 roll=-34.16 accel_g=1.018 samples=150 fault=NONE OLED=initialized
+[  28.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=370500 state=READY pitch=12.73 roll=-33.81 accel_g=1.033 samples=150 fault=NONE OLED=initialized
+[  29.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=371000 state=READY pitch=12.79 roll=-33.09 accel_g=1.018 samples=150 fault=NONE OLED=initialized
+[  29.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=371500 state=READY pitch=12.97 roll=-32.61 accel_g=1.022 samples=150 fault=NONE OLED=initialized
+[  30.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=372000 state=READY pitch=12.99 roll=-32.32 accel_g=1.020 samples=150 fault=NONE OLED=initialized
+[  30.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=372500 state=READY pitch=12.66 roll=-27.02 accel_g=1.026 samples=150 fault=NONE OLED=initialized
+[  31.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=373000 state=READY pitch=14.22 roll=-26.47 accel_g=1.034 samples=150 fault=NONE OLED=initialized
+[  31.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=373500 state=READY pitch=8.64 roll=-25.29 accel_g=1.034 samples=150 fault=NONE OLED=initialized
+[  32.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=374000 state=READY pitch=14.10 roll=-27.12 accel_g=1.027 samples=150 fault=NONE OLED=initialized
+[  32.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=374500 state=READY pitch=14.29 roll=-27.34 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[  33.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=375000 state=READY pitch=13.40 roll=-26.69 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[  33.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=375500 state=READY pitch=13.39 roll=-26.64 accel_g=1.022 samples=150 fault=NONE OLED=initialized
+[  34.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=376000 state=READY pitch=13.77 roll=-26.63 accel_g=1.027 samples=150 fault=NONE OLED=initialized
+[  34.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=376500 state=READY pitch=13.58 roll=-26.41 accel_g=1.027 samples=150 fault=NONE OLED=initialized
+[  35.34s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=377000 state=READY pitch=17.18 roll=-27.77 accel_g=1.031 samples=150 fault=NONE OLED=initialized
+[  35.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=377500 state=READY pitch=9.10 roll=-25.44 accel_g=1.032 samples=150 fault=NONE OLED=initialized
+[  36.30s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=378000 state=READY pitch=0.93 roll=-23.82 accel_g=1.041 samples=150 fault=NONE OLED=initialized
+[  36.80s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=378500 state=READY pitch=10.62 roll=-24.32 accel_g=1.034 samples=150 fault=NONE OLED=initialized
+[  37.31s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=379000 state=READY pitch=18.90 roll=-27.34 accel_g=1.030 samples=150 fault=NONE OLED=initialized
+[  37.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=379500 state=READY pitch=-2.79 roll=-23.05 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[  38.31s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=380000 state=READY pitch=-1.46 roll=-23.99 accel_g=1.031 samples=150 fault=NONE OLED=initialized
+[  38.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=380500 state=READY pitch=9.45 roll=-17.53 accel_g=1.040 samples=150 fault=NONE OLED=initialized
+[  39.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=381000 state=READY pitch=9.20 roll=-17.08 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[  39.84s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=381500 state=READY pitch=-2.18 roll=-34.46 accel_g=0.995 samples=150 fault=NONE OLED=initialized
+[  40.34s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=382000 state=READY pitch=4.94 roll=-27.20 accel_g=1.035 samples=150 fault=NONE OLED=initialized
+[  40.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=382500 state=READY pitch=6.61 roll=-14.38 accel_g=1.039 samples=150 fault=NONE OLED=initialized
+[  41.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=383000 state=READY pitch=5.81 roll=-15.13 accel_g=1.046 samples=150 fault=NONE OLED=initialized
+[  41.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=383500 state=READY pitch=-2.52 roll=-48.22 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[  42.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=384000 state=READY pitch=-1.66 roll=-47.44 accel_g=1.003 samples=150 fault=NONE OLED=initialized
+[  42.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=384500 state=READY pitch=3.37 roll=-25.00 accel_g=1.007 samples=150 fault=NONE OLED=initialized
+[  43.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=385000 state=READY pitch=5.07 roll=-16.02 accel_g=1.050 samples=150 fault=NONE OLED=initialized
+[  43.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=385500 state=READY pitch=3.32 roll=-16.81 accel_g=1.203 samples=150 fault=ACCEL CORRECTION OFF OLED=initialized
+[  44.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=386000 state=READY pitch=-1.67 roll=-17.13 accel_g=1.028 samples=150 fault=NONE OLED=initialized
+[  44.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=386500 state=READY pitch=5.17 roll=-4.83 accel_g=1.042 samples=150 fault=NONE OLED=initialized
+[  45.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=387000 state=READY pitch=7.00 roll=1.50 accel_g=1.066 samples=150 fault=NONE OLED=initialized
+[  45.33s] >>> SENT COMP OFF
+[  45.83s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=387500 state=READY pitch=4.95 roll=-3.08 accel_g=1.054 samples=150 fault=NONE OLED=initialized
+[  46.34s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=388000 state=READY pitch=5.71 roll=-25.67 accel_g=1.056 samples=150 fault=NONE OLED=initialized

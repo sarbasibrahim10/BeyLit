@@ -1,0 +1,14 @@
+--- session 2026-10-04 12:44:51 steps=['RAW', 'RAW', 'RAW', 'IMU CHECK']
+[   0.01s] >>> SENT RAW
+[   0.12s] RAW accel_mps2=2.844,9.422,1.902 gyro_radps=-0.0276,0.0782,-0.0248
+[   0.38s] >>> SENT RAW
+[   0.44s] RAW accel_mps2=2.862,9.351,1.953 gyro_radps=-0.0256,0.0867,-0.0222
+[   0.44s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=589710 state=READY pitch=-17.51 roll=78.20 accel_g=1.022 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT
+[   0.69s] >>> SENT RAW
+[   0.73s] RAW accel_mps2=2.869,9.370,1.958 gyro_radps=-0.0230,0.0847,-0.0135
+[   0.92s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=590210 state=READY pitch=-17.55 roll=78.19 accel_g=1.018 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT
+[   1.05s] >>> SENT IMU CHECK
+[   1.11s] IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+[   1.11s] IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+[   1.44s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=590712 state=READY pitch=-17.52 roll=78.19 accel_g=1.025 samples=150 fault=NONE OLED=initialized dist_mm=1841 range_status=0 dist_fault=NONE verdict=ASSIST reason=SIDE TILT
+[   1.92s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=591211 state=READY pitch=-17.49 roll=78.20 accel_g=1.018 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT

@@ -1,0 +1,24 @@
+--- session 2026-10-04 11:58:36 steps=['LEVEL OFF', 'WAIT:1', 'LEVEL AUTO']
+[   0.00s] >>> SENT LEVEL OFF
+[   0.08s] SERVO SIGNAL OFF t=55100 reason=COMMAND last_command_us=1500
+[   0.08s] Leveling OFF (auto disabled)
+[   0.26s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=55316 state=READY pitch=0.05 roll=-0.15 accel_g=1.041 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=2 dist_fault=NO DIST READING verdict=?UNKNOWN reason=NO DIST READING
+[   0.81s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=55816 state=READY pitch=0.08 roll=-0.13 accel_g=1.044 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=2 dist_fault=NO DIST READING verdict=?UNKNOWN reason=NO DIST READING
+[   1.31s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=56316 state=READY pitch=0.10 roll=-0.14 accel_g=1.041 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=?UNKNOWN reason=NO DIST READING
+[   1.38s] >>> SENT LEVEL AUTO
+[   1.44s] Leveling AUTO
+[   1.81s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=56816 state=READY pitch=0.10 roll=-0.13 accel_g=1.042 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=2 dist_fault=NO DIST READING verdict=?UNKNOWN reason=NO DIST READING
+[   2.31s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=57316 state=READY pitch=0.11 roll=-0.13 accel_g=1.043 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=?UNKNOWN reason=NO DIST READING
+[   2.44s] COMP ON t=57461 axis=PITCH sign=-1 start_tilt=0.11: AUTO, no time limit, 1350..1650 us.
+[   2.56s] TRACE t=57563 mode=COMP axis=PITCH tilt=0.10 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.041
+[   2.62s] TRACE t=57663 mode=COMP axis=PITCH tilt=0.10 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.045
+[   2.73s] TRACE t=57795 mode=COMP axis=PITCH tilt=0.09 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.040
+[   2.80s] COMP=ON TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=57816 state=READY pitch=0.09 roll=-0.12 accel_g=1.039 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=?UNKNOWN reason=NO DIST READING
+[   2.86s] TRACE t=57899 mode=COMP axis=PITCH tilt=0.09 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.044
+[   2.98s] TRACE t=58003 mode=COMP axis=PITCH tilt=0.10 rate_dps=0.1 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.045
+[   3.06s] TRACE t=58103 mode=COMP axis=PITCH tilt=0.09 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.043
+[   3.25s] TRACE t=58295 mode=COMP axis=PITCH tilt=0.13 rate_dps=0.3 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.040
+[   3.31s] COMP=ON TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=58316 state=READY pitch=0.13 roll=-0.12 accel_g=1.038 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=2 dist_fault=NO DIST READING verdict=?UNKNOWN reason=NO DIST READING
+[   3.38s] TRACE t=58399 mode=COMP axis=PITCH tilt=0.12 rate_dps=0.1 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.043
+[   3.44s] TRACE t=58503 mode=COMP axis=PITCH tilt=0.12 rate_dps=0.0 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.040
+[   3.56s] TRACE t=58603 mode=COMP axis=PITCH tilt=0.13 rate_dps=0.2 slew=0.40 target_us=1500 command_us=1500 attached=1 accel_g=1.046

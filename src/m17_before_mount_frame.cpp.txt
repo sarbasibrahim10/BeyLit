@@ -1,0 +1,549 @@
+#include <Arduino.h>
+#include <Wire.h>
+#include <Adafruit_SH110X.h>
+#include <cmath>
+#include <cstring>
+#include <ESP32Servo.h>
+#include <Adafruit_VL53L0X.h>
+
+// BeyLit advisory display: VL53L0X distance + MPU6500-compatible tilt -> verdict on SH1106 OLED,
+// plus optional one-axis servo leveling (COMP ON). ADVISORY ONLY: no motor, brake or steering output.
+// "STOP MOTOR" is on-screen text for the person; nothing here is ever wired to propulsion.
+constexpr uint32_t SAMPLE_MS = 20, MAX_GAP_US = 250000;
+constexpr float GRAVITY = 9.80665f, RAD_TO_DEGREES = 57.2957795f;
+constexpr unsigned CAL_SAMPLES = 150, MAX_CAL_ATTEMPTS = 3;
+Adafruit_SH1106G oled(128, 64, &Wire, -1, 100000, 100000);
+enum class State { STARTUP, CALIBRATING, READY, ERROR };
+State state = State::STARTUP;
+bool busReady = false, oledReady = false, imuReady = false, orientationValid = false;
+uint8_t imuAddress = 0, oledAddress = 0;
+const char *fault = "NONE";
+float pitch = 0, roll = 0, pitchReference = 0, rollReference = 0;
+float gyroBias[3] = {}, gyroSum[3] = {};
+float sumPitch = 0, sumRoll = 0, firstPitch = 0, firstRoll = 0;
+float accelerationG = 0;
+unsigned samples = 0, attempt = 0;
+uint32_t calStarted = 0, calDeadline = 0, lastSample = 0, lastMicros = 0, lastLog = 0;
+char command[32]; size_t commandLength = 0; bool overflow = false;
+
+// Bench test only: approximate gain; not a calibrated physical servo angle.
+// Servo signal pin selectable at runtime (SERVO PIN 18 / SERVO PIN 27); not persisted across reset.
+uint8_t servoPin = 27; // servo confirmed moving on GPIO27 after rewiring (2026-10-04)
+Servo stabilizer;
+bool compensation = false, useRoll = true, servoTest = false; // boot default ROLL: user-confirmed tilt axis for this mount (2026-10-04)
+int direction = -1, pulseUs = 1500, targetUs = 1500, testPhase = 0;
+uint32_t lastServo = 0, compensationStarted = 0, lastTrace = 0;
+// Slew limit by elapsed time so OLED/serial stalls do not slow the servo. The limit scales with the
+// gyro rate of the selected axis: 0.4 us/ms when still (smooth), up to 2 us/ms when tilting fast.
+constexpr float SLEW_US_PER_MS = 0.4f, MAX_SLEW_US_PER_MS = 2.0f;
+float tiltRateDps = 0, slewUsPerMs = SLEW_US_PER_MS;
+// COMP runs 60 s after COMP ON; each KEEP from a supervising host extends it to 10 s from now.
+// Losing the host therefore stops the servo within 10 s; 15 min hard cap.
+constexpr uint32_t COMP_START_MS = 60000, KEEP_EXTEND_MS = 10000, COMP_MAX_MS = 15UL * 60000;
+uint32_t compDeadline = 0;
+// AUTO leveling (boot default): starts after calibration, no time limit, sensor safety stops still
+// apply; resumes once conditions have been normal for AUTO_RESUME_MS. COMP OFF / LEVEL OFF disable it.
+bool autoLevel = true;
+uint32_t autoOkSince = 0;
+constexpr uint32_t AUTO_RESUME_MS = 1000;
+constexpr uint32_t MAX_SLEW_GAP_MS = 100;
+// +/-150 us about neutral, ~+/-15 deg SG90 horn travel at 10 us per degree of tilt (not calibrated).
+constexpr int SERVO_MIN_US = 1350, SERVO_MAX_US = 1650;
+uint32_t lastServoMove = 0; // distance readings taken while the horn moves are rejected
+// Acceleration spikes (hand bumps) hold the last command while tilt continues from the gyro;
+// only an excursion sustained past ACCEL_HOLD_MS stops (gyro-only drift stays small over a few s).
+constexpr uint32_t ACCEL_HOLD_MS = 3000;
+uint32_t accelBadSince = 0; // 0 = acceleration currently inside gate
+float selectedTilt() { return useRoll ? roll - rollReference : pitch - pitchReference; }
+// Stops PWM only (no power disconnect, no centering); reason is printed when a test was running.
+void stopCompensation(const char *reason = nullptr) {
+    const bool wasRunning = compensation || servoTest;
+    compensation = servoTest = false; accelBadSince = 0;
+    if (stabilizer.attached()) stabilizer.detach();
+    pinMode(servoPin, OUTPUT); digitalWrite(servoPin, LOW);
+    if (wasRunning) Serial.printf("SERVO SIGNAL OFF t=%lu reason=%s last_command_us=%d\n",
+        static_cast<unsigned long>(millis()), reason ? reason : "COMMAND", pulseUs);
+}
+bool attachServo() {
+    stabilizer.setPeriodHertz(50);
+    stabilizer.attach(servoPin, SERVO_MIN_US, SERVO_MAX_US);
+    if (!stabilizer.attached()) { Serial.println("SERVO ATTACH FAILED"); return false; }
+    pulseUs = targetUs = 1500; stabilizer.writeMicroseconds(pulseUs);
+    lastServo = lastTrace = millis();
+    return true;
+}
+void startCompensation() {
+    if (servoTest) { Serial.println("COMP refused: SERVO TEST running."); return; }
+    if (state != State::READY || !orientationValid ||
+        static_cast<uint32_t>(micros() - lastMicros) > MAX_GAP_US ||
+        accelerationG < 0.85f || accelerationG > 1.15f) {
+        Serial.println("COMP refused: calibrate and hold MPU still first."); return;
+    }
+    const float tilt = selectedTilt();
+    if (!isfinite(tilt) || fabsf(tilt) > 30.0f) {
+        Serial.printf("COMP refused: %s tilt %.1f deg beyond 30; return to reference pose.\n", useRoll ? "ROLL" : "PITCH", tilt);
+        return;
+    }
+    if (!attachServo()) return;
+    compensation = true; compensationStarted = millis(); accelBadSince = 0;
+    compDeadline = compensationStarted + COMP_START_MS;
+    Serial.printf("COMP ON t=%lu axis=%s sign=%d start_tilt=%.2f: %s, %d..%d us.\n",
+        static_cast<unsigned long>(compensationStarted), useRoll ? "ROLL" : "PITCH", direction, tilt, autoLevel ? "AUTO, no time limit" : "60 s unless KEEP", SERVO_MIN_US, SERVO_MAX_US);
+}
+// Bounded sweep 1500 -> 1350 -> 1650 -> 1500 us, 3 us per 40 ms, 15 s limit.
+void startServoTest() {
+    if (compensation) { Serial.println("SERVO TEST refused: COMP running."); return; }
+    if (servoTest || !attachServo()) return;
+    servoTest = true; testPhase = 0; compensationStarted = millis();
+    Serial.printf("SERVO TEST GPIO%u: neutral then %d -> %d -> 1500 us; commanded position only.\n", servoPin, SERVO_MIN_US, SERVO_MAX_US);
+}
+void traceServo(float tilt) {
+    if (static_cast<uint32_t>(millis() - lastTrace) < 100) return;
+    lastTrace = millis();
+    Serial.printf("TRACE t=%lu mode=%s%s axis=%s tilt=%.2f rate_dps=%.1f slew=%.2f target_us=%d command_us=%d attached=%d accel_g=%.3f\n",
+        static_cast<unsigned long>(lastTrace), servoTest ? "TEST" : "COMP", accelBadSince ? "-HOLD" : "", useRoll ? "ROLL" : "PITCH",
+        tilt, tiltRateDps, slewUsPerMs, targetUs, pulseUs, stabilizer.attached(), accelerationG);
+}
+void updateServoTest() {
+    const uint32_t now = millis();
+    if (static_cast<uint32_t>(now - compensationStarted) >= 15000) { stopCompensation("TEST 15 s LIMIT"); return; }
+    if (static_cast<uint32_t>(now - compensationStarted) < 1000 ||
+        static_cast<uint32_t>(now - lastServo) < 40) return;
+    lastServo = now;
+    const int targets[] = {SERVO_MIN_US, SERVO_MAX_US, 1500};
+    targetUs = targets[testPhase];
+    pulseUs += constrain(targetUs - pulseUs, -3, 3);
+    stabilizer.writeMicroseconds(pulseUs); lastServoMove = now;
+    traceServo(orientationValid ? selectedTilt() : NAN);
+    if (pulseUs == targetUs && ++testPhase == 3) stopCompensation("TEST COMPLETE");
+}
+void updateCompensation() {
+    if (servoTest) { updateServoTest(); return; }
+    if (!compensation) return;
+    char reason[64];
+    if (state != State::READY || !orientationValid) { stopCompensation("IMU NOT READY"); return; }
+    if (static_cast<uint32_t>(micros() - lastMicros) > MAX_GAP_US) { stopCompensation("IMU DATA STALE"); return; }
+    if (accelerationG < 0.85f || accelerationG > 1.15f) {
+        if (!accelBadSince) accelBadSince = millis() | 1;
+        if (static_cast<uint32_t>(millis() - accelBadSince) < ACCEL_HOLD_MS) { traceServo(selectedTilt()); return; } // hold position
+        snprintf(reason, sizeof(reason), "ACCEL %.3f g OUTSIDE 0.85..1.15 FOR 3 s", accelerationG);
+        stopCompensation(reason); return;
+    }
+    accelBadSince = 0;
+    if (!autoLevel && static_cast<uint32_t>(millis() - compensationStarted) >= COMP_MAX_MS) { stopCompensation("15 min LIMIT"); return; }
+    if (!autoLevel && static_cast<int32_t>(millis() - compDeadline) >= 0) { stopCompensation("TIMEOUT (no KEEP)"); return; }
+    const uint32_t now = millis(), sinceServo = static_cast<uint32_t>(now - lastServo);
+    if (sinceServo < 20) return;
+    lastServo = now;
+    float tilt = selectedTilt();
+    if (!isfinite(tilt) || fabsf(tilt) > 30.0f) {
+        snprintf(reason, sizeof(reason), "TILT %.1f deg BEYOND 30", tilt);
+        stopCompensation(reason); return;
+    }
+    traceServo(tilt);
+    if (fabsf(tilt) < 0.5f) tilt = 0;
+    targetUs = constrain(1500 + static_cast<int>(lroundf(direction * tilt * 10.0f)), SERVO_MIN_US, SERVO_MAX_US);
+    // Servo must move 10 us per degree of tilt; allow 1.5x the current tilt rate as headroom.
+    slewUsPerMs = constrain(tiltRateDps * 10.0f / 1000.0f * 1.5f, SLEW_US_PER_MS, MAX_SLEW_US_PER_MS);
+    const int maxStep = static_cast<int>(lroundf(min(sinceServo, MAX_SLEW_GAP_MS) * slewUsPerMs));
+    const int step = constrain(targetUs - pulseUs, -maxStep, maxStep);
+    if (step) { pulseUs += step; lastServoMove = now; }
+    stabilizer.writeMicroseconds(pulseUs);
+}
+
+bool readRegisters(uint8_t address, uint8_t reg, uint8_t *data, uint8_t count) {
+    Wire.beginTransmission(address); Wire.write(reg);
+    if (Wire.endTransmission(false) != 0) return false;
+    if (Wire.requestFrom(address, count) != count) return false;
+    for (uint8_t i = 0; i < count; ++i) data[i] = Wire.read();
+    return true;
+}
+bool responds(uint8_t address) {
+    if (!busReady) return false;
+    Wire.beginTransmission(address); return Wire.endTransmission() == 0;
+}
+const char *stateName() {
+    switch (state) {
+        case State::STARTUP: return "STARTUP";
+        case State::CALIBRATING: return "CALIBRATING";
+        case State::READY: return "READY";
+        default: return "SENSOR_ERROR";
+    }
+}
+void fail(const char *reason) {
+    stopCompensation(reason);
+    const bool changed = state != State::ERROR || strcmp(fault, reason);
+    state = State::ERROR; orientationValid = false; fault = reason;
+    if (changed) Serial.printf("IMU ERROR: %s; servo OFF, compensation OFF\n", reason);
+}
+void beginAttempt() {
+    ++attempt; samples = 0; sumPitch = sumRoll = 0;
+    for (unsigned i = 0; i < 3; ++i) gyroSum[i] = 0;
+    calStarted = millis();
+    Serial.printf("HOLD STILL: calibration attempt %u/%u\n", attempt, MAX_CAL_ATTEMPTS);
+}
+void startCalibration() {
+    stopCompensation("CALIBRATE");
+    if (!imuReady) { fail("IMU INIT FAILED"); return; }
+    state = State::CALIBRATING; orientationValid = false; fault = "NONE";
+    attempt = 0; calDeadline = millis(); beginAttempt();
+}
+void rejectMovement() {
+    if (attempt >= MAX_CAL_ATTEMPTS) { fail("CALIBRATION MOTION"); return; }
+    beginAttempt();
+}
+// MPU6500 diagnostic: checked 14-byte burst, +/-2g and +/-250 deg/s scales.
+bool readSample(float a[3], float g[3]) {
+    uint8_t bytes[14];
+    if (!readRegisters(imuAddress, 0x3B, bytes, sizeof(bytes))) return false;
+    auto signedWord = [&](unsigned i) {
+        const uint16_t value = (static_cast<uint16_t>(bytes[i]) << 8) | bytes[i + 1];
+        return value < 32768 ? static_cast<int32_t>(value) : static_cast<int32_t>(value) - 65536;
+    };
+    for (unsigned i = 0; i < 3; ++i) {
+        a[i] = signedWord(i * 2) * GRAVITY / 16384.0f; // +/-2g -> m/s^2
+        g[i] = signedWord(8 + i * 2) / 131.0f / RAD_TO_DEGREES; // +/-250 dps -> rad/s
+    }
+    return true;
+}
+void updateImu() {
+    if (!imuReady || state == State::ERROR) return;
+    const uint32_t now = millis();
+    if (static_cast<uint32_t>(now - lastSample) < SAMPLE_MS) return;
+    lastSample = now;
+    float a[3], g[3];
+    if (!readSample(a, g)) { imuReady = false; fail("I2C READ FAILED"); return; }
+    const uint32_t tick = micros();
+    const uint32_t elapsed = static_cast<uint32_t>(tick - lastMicros); lastMicros = tick;
+    const float norm = sqrtf(a[0]*a[0] + a[1]*a[1] + a[2]*a[2]);
+    accelerationG = norm / GRAVITY;
+    if (norm < 0.1f) { fail("INVALID ACCELERATION"); return; }
+    const float accPitch = atan2f(-a[0], sqrtf(a[1]*a[1] + a[2]*a[2])) * RAD_TO_DEGREES;
+    const float accRoll = atan2f(a[1], a[2]) * RAD_TO_DEGREES;
+    if (state == State::CALIBRATING) {
+        if (static_cast<uint32_t>(now - calDeadline) > 15000) { fail("CALIBRATION TIMEOUT"); return; }
+        if (static_cast<uint32_t>(now - calStarted) < 1000) return; // settle before collecting
+        const float speed = sqrtf(g[0]*g[0] + g[1]*g[1] + g[2]*g[2]);
+        if (fabsf(accPitch) > 60 || fabsf(accRoll) > 60) {
+            Serial.printf("CAL pose unsuitable: pitch=%.1f roll=%.1f deg\n", accPitch, accRoll);
+            fail("REST BOARD FLAT"); return;
+        }
+        if (accelerationG < 0.85f || accelerationG > 1.15f || speed > 0.15f) {
+            Serial.printf("CAL motion check: accel_g=%.3f gyro_radps=%.3f\n", accelerationG, speed);
+            rejectMovement(); return;
+        }
+        if (!samples) { firstPitch = accPitch; firstRoll = accRoll; }
+        if (fabsf(accPitch - firstPitch) > 2 || fabsf(accRoll - firstRoll) > 2) { rejectMovement(); return; }
+        sumPitch += accPitch; sumRoll += accRoll;
+        for (unsigned i = 0; i < 3; ++i) gyroSum[i] += g[i];
+        if (++samples >= CAL_SAMPLES) {
+            pitch = pitchReference = sumPitch / samples;
+            roll = rollReference = sumRoll / samples;
+            for (unsigned i = 0; i < 3; ++i) gyroBias[i] = gyroSum[i] / samples;
+            state = State::READY; orientationValid = true; fault = "NONE";
+            Serial.printf("CALIBRATION OK reference pitch=%.2f roll=%.2f deg; gyro bias rad/s=%.5f,%.5f,%.5f\n",
+                pitchReference, rollReference, gyroBias[0], gyroBias[1], gyroBias[2]);
+        }
+        return;
+    }
+    if (elapsed > MAX_GAP_US) { fail("SAMPLE TIME GAP"); return; }
+    const float dt = elapsed / 1000000.0f;
+    // Simple small-angle complementary filter; board X gyro -> roll, Y -> pitch.
+    pitch += (g[1] - gyroBias[1]) * RAD_TO_DEGREES * dt;
+    roll += (g[0] - gyroBias[0]) * RAD_TO_DEGREES * dt;
+    tiltRateDps = fabsf((useRoll ? g[0] - gyroBias[0] : g[1] - gyroBias[1]) * RAD_TO_DEGREES);
+    if (accelerationG >= 0.85f && accelerationG <= 1.15f) {
+        const float alpha = 0.5f / (0.5f + dt);
+        pitch = alpha * pitch + (1 - alpha) * accPitch;
+        roll = alpha * roll + (1 - alpha) * accRoll;
+        fault = "NONE";
+    } else fault = "ACCEL CORRECTION OFF";
+    orientationValid = true;
+}
+// ---------------- VL53L0X distance (single fixed forward sensor, no scanning) ----------------
+Adafruit_VL53L0X tof;
+bool tofReady = false;
+uint16_t distanceMm = 0;
+uint8_t rangeStatus = 255;
+uint32_t lastValidDistance = 0, lastTofResult = 0, lastTofPoll = 0, lastTofRetry = 0;
+bool haveValidDistance = false;
+const char *distanceFault = "STARTING";
+constexpr uint32_t DISTANCE_FRESH_MS = 300, SERVO_SETTLE_MS = 150;
+void initTof(bool verbose) {
+    tofReady = false;
+    // LONG_RANGE preset: signal-rate limit 0.1 MCPS, sigma 60 mm - reaches further, slightly noisier.
+    if (!responds(0x29) || !tof.begin(0x29, false, &Wire, Adafruit_VL53L0X::VL53L0X_SENSE_LONG_RANGE)) {
+        if (verbose || strcmp(distanceFault, "CHECK SENSOR")) Serial.println("TOF init failed; distance unknown.");
+        distanceFault = "CHECK SENSOR"; Wire.setClock(100000); Wire.setTimeOut(25); return;
+    }
+    Wire.setClock(100000); Wire.setTimeOut(25);
+    // 100 ms budget collects more signal so far targets (1.5-2 m) return valid readings more often.
+    if (!tof.setMeasurementTimingBudgetMicroSeconds(100000) || !tof.startRangeContinuous(100)) {
+        Serial.println("TOF configuration failed; distance unknown."); distanceFault = "CHECK SENSOR"; return;
+    }
+    tofReady = true; lastTofResult = millis(); distanceFault = "WAITING";
+    Serial.println("VL53L0X ready: LONG_RANGE, 100 ms budget, continuous.");
+}
+void updateTof() {
+    const uint32_t now = millis();
+    if (!tofReady) {
+        if (busReady && static_cast<uint32_t>(now - lastTofRetry) >= 2000) { lastTofRetry = now; initTof(false); }
+        return;
+    }
+    if (static_cast<uint32_t>(now - lastTofPoll) < 20) return;
+    lastTofPoll = now;
+    const bool complete = tof.isRangeComplete();
+    if (tof.Status != VL53L0X_ERROR_NONE) {
+        tofReady = false; distanceFault = "CHECK SENSOR"; Serial.println("TOF API/bus error; distance unknown."); return;
+    }
+    if (complete) {
+        const uint16_t raw = tof.readRangeResult();
+        lastTofResult = millis();
+        rangeStatus = tof.readRangeStatus();
+        const bool valid = tof.Status == VL53L0X_ERROR_NONE && rangeStatus == 0 && raw != 0xFFFF && raw > 0;
+        const bool servoMoving = (compensation || servoTest) &&
+            static_cast<uint32_t>(lastTofResult - lastServoMove) < SERVO_SETTLE_MS;
+        if (!valid) distanceFault = "NO DIST READING";
+        else if (servoMoving) distanceFault = "SERVO MOVING";
+        else { distanceMm = raw; lastValidDistance = lastTofResult; haveValidDistance = true; distanceFault = "NONE"; }
+    } else if (static_cast<uint32_t>(now - lastTofResult) > 500) {
+        tofReady = false; distanceFault = "CHECK SENSOR"; Serial.println("TOF acquisition timeout; distance unknown.");
+    }
+}
+bool distanceKnown() {
+    return tofReady && haveValidDistance && static_cast<uint32_t>(millis() - lastValidDistance) <= DISTANCE_FRESH_MS;
+}
+
+// ---------------- Verdict ----------------
+// UNVALIDATED PROTOTYPE LIMITS for a tabletop demo; adjust only with bench evidence. Not braking distances.
+// SAFE (owner's choice of word) means only: a fresh valid reading puts the nearest object straight ahead
+// beyond CAUTION_MM, the board is level and every input is valid. No ToF return is NEVER shown as SAFE.
+constexpr uint16_t STOP_MM = 300, CAUTION_MM = 400, DIST_HYST_MM = 20;
+constexpr float CAUTION_PITCH = 5, CAUTION_ROLL = 4, ASSIST_PITCH = 10, ASSIST_ROLL = 8, TILT_HYST = 1;
+// Mode definitions, triggers and reasons: README "Verdict modes". Keep both in sync.
+// Ranked so a plain max picks the worse condition; a known STOP/ASSIST outranks an unknown sensor.
+// NO_TARGET: ToF healthy and fresh but no return (RangeStatus 2 signal fail / 4 phase fail) - calm, not SAFE.
+enum Level : uint8_t { SAFE = 0, NO_TARGET = 1, CAUTION = 2, UNKNOWN = 3, ASSIST = 4, STOP = 5 };
+Level distLevel = UNKNOWN, tiltLevel = UNKNOWN, shownLevel = UNKNOWN, pendingLevel = UNKNOWN;
+const char *shownReason = "STARTING";
+uint32_t pendingSince = 0;
+constexpr uint32_t DEESCALATE_MS = 300; // worse levels show at once; better levels must persist
+// No-return dropouts keep the last MEASURED distance level (STOP, CAUTION or SAFE) for 2 s; after that
+// NO TARGET. SAFE therefore always comes from a real reading no older than 2 s.
+constexpr uint32_t DIST_HOLD_MS = 2000;
+const char *levelWord(Level l) {
+    switch (l) {
+        case SAFE: return "SAFE";
+        case NO_TARGET: return "NO TARGET";
+        case CAUTION: return "CAUTION";
+        case ASSIST: return "ASSIST";
+        case STOP: return "STOP MOTOR";
+        default: return "?UNKNOWN";
+    }
+}
+bool imuUsable() {
+    return state == State::READY && orientationValid && static_cast<uint32_t>(micros() - lastMicros) <= MAX_GAP_US;
+}
+void updateVerdict() {
+    const char *distReason, *tiltReason;
+    const bool noReturn = tofReady && !strcmp(distanceFault, "NO DIST READING") && (rangeStatus == 2 || rangeStatus == 4) &&
+        static_cast<uint32_t>(millis() - lastTofResult) <= DISTANCE_FRESH_MS;
+    const bool holdMeasured = noReturn && (distLevel == STOP || distLevel == CAUTION || distLevel == SAFE) &&
+        haveValidDistance && static_cast<uint32_t>(millis() - lastValidDistance) < DIST_HOLD_MS;
+    if (holdMeasured) distReason = distLevel == STOP ? "OBJECT < 30 CM" : distLevel == CAUTION ? "OBJECT NEAR" : "NO OBJECT < 40 CM";
+    else if (!distanceKnown()) {
+        distLevel = noReturn ? NO_TARGET : UNKNOWN;
+        distReason = noReturn ? "BEYOND RANGE" : distanceFault;
+    } else {
+        const uint16_t d = distanceMm;
+        const bool wasKnown = distLevel != UNKNOWN && distLevel != NO_TARGET;
+        if (d < STOP_MM || (wasKnown && distLevel == STOP && d < STOP_MM + DIST_HYST_MM)) distLevel = STOP;
+        else if (d < CAUTION_MM || (wasKnown && distLevel >= CAUTION && d < CAUTION_MM + DIST_HYST_MM)) distLevel = CAUTION;
+        else distLevel = SAFE;
+        distReason = distLevel == STOP ? "OBJECT < 30 CM" : distLevel == CAUTION ? "OBJECT NEAR" : "NO OBJECT < 40 CM";
+    }
+    if (!imuUsable()) {
+        tiltLevel = UNKNOWN;
+        tiltReason = state == State::CALIBRATING ? "CALIBRATING" : imuReady ? "RECALIBRATE IMU" : "CHECK SENSOR";
+    } else {
+        const float ap = fabsf(pitch - pitchReference), ar = fabsf(roll - rollReference);
+        const bool wasKnown = tiltLevel != UNKNOWN;
+        const float hA = wasKnown && tiltLevel == ASSIST ? TILT_HYST : 0;
+        const float hC = wasKnown && tiltLevel >= CAUTION ? TILT_HYST : 0;
+        if (ap >= ASSIST_PITCH - hA || ar >= ASSIST_ROLL - hA) tiltLevel = ASSIST;
+        else if (ap >= CAUTION_PITCH - hC || ar >= CAUTION_ROLL - hC) tiltLevel = CAUTION;
+        else tiltLevel = SAFE;
+        tiltReason = ap / CAUTION_PITCH >= ar / CAUTION_ROLL ? "SLOPE" : "SIDE TILT";
+    }
+    const Level worst = distLevel >= tiltLevel ? distLevel : tiltLevel;
+    const char *reason = distLevel >= tiltLevel ? distReason : tiltReason;
+    const uint32_t now = millis();
+    if (worst >= shownLevel) { shownLevel = pendingLevel = worst; shownReason = reason; pendingSince = now; return; }
+    if (worst != pendingLevel) { pendingLevel = worst; pendingSince = now; }
+    if (static_cast<uint32_t>(now - pendingSince) >= DEESCALATE_MS) { shownLevel = worst; shownReason = reason; }
+}
+
+// ---------------- Display + LED ----------------
+constexpr uint8_t LED_PIN = 2; // onboard LED on most ESP32 DevKit boards; verify visually
+bool inverted = false;
+Level drawnLevel = SAFE;
+uint32_t lastDraw = 0, lastOledRetry = 0;
+void draw() {
+    if (!oledReady) return;
+    if (!responds(oledAddress)) { oledReady = false; Serial.println("OLED ERROR; display unavailable"); return; }
+    lastDraw = millis(); drawnLevel = shownLevel;
+    oled.clearDisplay(); oled.setTextColor(SH110X_WHITE); oled.setTextWrap(false);
+    oled.setTextSize(2); oled.setCursor(0, 0); oled.print(levelWord(shownLevel));
+    oled.setTextSize(1); oled.setCursor(0, 20);
+    if (imuUsable()) oled.printf("Pitch %+.1f Roll %+.1f", pitch - pitchReference, roll - rollReference);
+    else oled.print("Pitch -- Roll --");
+    oled.setCursor(0, 31);
+    if (distanceKnown()) oled.printf("Dist %u cm", (distanceMm + 5) / 10); else oled.print("Dist --");
+    oled.setCursor(78, 31); oled.print(compensation ? "LVL ON" : servoTest ? "SRV TST" : autoLevel ? "LVL WAIT" : "LVL OFF");
+    oled.setCursor(0, 42); oled.print(shownReason);
+    oled.setCursor(0, 56); oled.print("ADVISORY-DEMO LIMITS");
+    oled.display();
+}
+void updateDisplay() {
+    const uint32_t now = millis();
+    if (!oledReady) {
+        if (busReady && static_cast<uint32_t>(now - lastOledRetry) >= 2000) {
+            lastOledRetry = now;
+            if (responds(oledAddress) && oled.begin(oledAddress, false)) {
+                Wire.setClock(100000); Wire.setTimeOut(25); oledReady = true; inverted = false;
+                Serial.println("OLED re-initialized");
+            }
+        }
+        return;
+    }
+    // Full redraw ~90 ms at 100 kHz: every 500 ms, or sooner (>=150 ms) when the verdict changes.
+    if (static_cast<uint32_t>(now - lastDraw) >= 500 ||
+        (shownLevel != drawnLevel && static_cast<uint32_t>(now - lastDraw) >= 150)) draw();
+    // ASSIST and STOP invert the screen; STOP also blinks ~2 Hz. invertDisplay is a single command.
+    const bool wantInvert = shownLevel == ASSIST || (shownLevel == STOP && (now / 250) % 2 == 0);
+    if (wantInvert != inverted) { oled.invertDisplay(wantInvert); inverted = wantInvert; }
+    static const uint16_t ledPeriod[] = {0, 2000, 1000, 700, 400, 150}; // SAFE off .. STOP fastest
+    const uint16_t period = ledPeriod[shownLevel];
+    digitalWrite(LED_PIN, period && (now % period) < period / 2 ? HIGH : LOW);
+}
+void status() {
+    Serial.printf("COMP=%s TEST=%s pin=%u axis=%s sign=%d command_us=%d (not measured) ", compensation ? "ON" : "OFF", servoTest ? "ON" : "OFF", servoPin, useRoll ? "ROLL" : "PITCH", direction, pulseUs);
+    Serial.printf("t=%lu state=%s pitch=", static_cast<unsigned long>(millis()), stateName());
+    if (orientationValid) Serial.printf("%.2f roll=%.2f", pitch-pitchReference, roll-rollReference);
+    else Serial.print("null roll=null");
+    Serial.printf(" accel_g=%.3f samples=%u fault=%s OLED=%s", accelerationG, samples, fault, oledReady ? "initialized" : "ERROR");
+    Serial.print(" dist_mm=");
+    if (distanceKnown()) Serial.print(distanceMm); else Serial.print("null");
+    Serial.printf(" range_status=%u dist_fault=%s verdict=%s reason=%s\n",
+        rangeStatus, distanceFault, levelWord(shownLevel), shownReason);
+}
+void inspectRaw() {
+    float a[3], g[3];
+    if (!imuReady || !readSample(a, g)) { Serial.println("RAW READ ERROR"); return; }
+    Serial.printf("RAW accel_mps2=%.3f,%.3f,%.3f gyro_radps=%.4f,%.4f,%.4f\n",
+        a[0],a[1],a[2],g[0],g[1],g[2]);
+}
+void inspectImu() {
+    for (uint8_t address : {static_cast<uint8_t>(0x68), static_cast<uint8_t>(0x69)}) {
+        uint8_t id = 0;
+        bool ack = responds(address);
+        bool ok = ack && readRegisters(address, 0x75, &id, 1);
+        Serial.printf("IMU CHECK address=0x%02X ACK=%u id_read=%u WHO_AM_I=0x%02X\n", address, ack, ok, id);
+    }
+}
+void commands() {
+    for (unsigned i = 0; i < 64 && Serial.available(); ++i) {
+        char c = Serial.read();
+        if (c == '\n' || c == '\r') {
+            command[commandLength] = 0;
+            if (overflow) Serial.println("Command discarded: too long");
+            else if (!strcmp(command, "CALIBRATE")) startCalibration();
+            else if (!strcmp(command, "STATUS")) status();
+            else if (!strcmp(command, "IMU CHECK")) inspectImu();
+            else if (!strcmp(command, "RAW")) inspectRaw();
+            else if (!strcmp(command, "COMP ON")) startCompensation();
+            else if (!strcmp(command, "SERVO TEST")) startServoTest();
+            else if (!strcmp(command, "SERVO PIN 18") || !strcmp(command, "SERVO PIN 27")) {
+                stopCompensation(); servoPin = command[10] == '1' ? 18 : 27;
+                Serial.printf("Servo signal pin = GPIO%u\n", servoPin);
+            }
+            else if (!strcmp(command, "COMP OFF") || !strcmp(command, "SERVO OFF") || !strcmp(command, "LEVEL OFF")) {
+                autoLevel = false; stopCompensation(); Serial.println("Leveling OFF (auto disabled)");
+            }
+            else if (!strcmp(command, "LEVEL AUTO")) { autoLevel = true; autoOkSince = 0; Serial.println("Leveling AUTO"); }
+            else if (!strcmp(command, "KEEP")) {
+                if (compensation && static_cast<int32_t>(millis() + KEEP_EXTEND_MS - compDeadline) > 0)
+                    compDeadline = millis() + KEEP_EXTEND_MS;
+            }
+            else if (!strcmp(command, "AXIS ROLL")) { stopCompensation(); useRoll = true; }
+            else if (!strcmp(command, "AXIS PITCH")) { stopCompensation(); useRoll = false; }
+            else if (!strcmp(command, "REVERSE")) { stopCompensation(); direction = -direction; }
+            else if (commandLength) Serial.println("Commands: STATUS | CALIBRATE | SERVO TEST | SERVO PIN 18/27 | COMP ON/OFF | LEVEL AUTO/OFF | AXIS ROLL/PITCH | REVERSE");
+            commandLength = 0; overflow = false;
+        } else if (commandLength < sizeof(command)-1 && !overflow) command[commandLength++] = c;
+        else overflow = true;
+    }
+}
+void updateAutoLevel() {
+    if (!autoLevel || compensation || servoTest) { autoOkSince = 0; return; }
+    const float tilt = selectedTilt();
+    const bool ok = state == State::READY && orientationValid &&
+        static_cast<uint32_t>(micros() - lastMicros) <= MAX_GAP_US &&
+        accelerationG >= 0.85f && accelerationG <= 1.15f && isfinite(tilt) && fabsf(tilt) <= 30.0f;
+    if (!ok) { autoOkSince = 0; return; }
+    if (!autoOkSince) { autoOkSince = millis() | 1; return; }
+    if (static_cast<uint32_t>(millis() - autoOkSince) >= AUTO_RESUME_MS) { autoOkSince = 0; startCompensation(); }
+}
+// MPU6500-specific register setup with checked writes/readback (TDK RM-MPU-6500A-00).
+// Identity 0x70 required; do not bypass. Retried every 2 s after a failure (e.g. unplugged).
+uint32_t lastImuRetry = 0, lastCalRetry = 0;
+constexpr uint32_t CAL_RETRY_MS = 5000; // failed calibration retries itself until the board is flat and still
+bool initImu(bool verbose) {
+    imuReady = false;
+    imuAddress = responds(0x68) ? 0x68 : responds(0x69) ? 0x69 : 0;
+    if (verbose) inspectImu();
+    if (!imuAddress) { fail("IMU NO ACK"); return false; }
+    uint8_t identity = 0;
+    if (!readRegisters(imuAddress, 0x75, &identity, 1) || identity != 0x70) { fail("UNSUPPORTED IMU ID"); return false; }
+    const uint8_t registers[] = {0x6B, 0x6C, 0x1A, 0x1B, 0x1C, 0x1D, 0x19};
+    const uint8_t values[] =    {0x01, 0x00, 0x03, 0x00, 0x00, 0x03, 0x09};
+    for (unsigned i = 0; i < sizeof(registers); ++i) {
+        Wire.beginTransmission(imuAddress);
+        Wire.write(registers[i]); Wire.write(values[i]);
+        if (Wire.endTransmission() != 0) { fail("IMU WRITE ERROR"); return false; }
+        uint8_t actual = 0;
+        if (!readRegisters(imuAddress, registers[i], &actual, 1) || actual != values[i]) { fail("IMU CONFIG ERROR"); return false; }
+    }
+    imuReady = true; lastMicros = micros();
+    Serial.printf("MPU6500 initialized at 0x%02X; HOLD STILL.\n", imuAddress);
+    return true;
+}
+void setup() {
+    Serial.begin(115200);
+    pinMode(18, OUTPUT); digitalWrite(18, LOW); // Servo off until COMP ON / SERVO TEST.
+    pinMode(27, OUTPUT); digitalWrite(27, LOW);
+    pinMode(19, OUTPUT); digitalWrite(19, LOW);
+    pinMode(LED_PIN, OUTPUT); digitalWrite(LED_PIN, LOW);
+    busReady = Wire.begin(21, 22, 100000); Wire.setTimeOut(25);
+    if (!busReady) { fail("I2C INIT FAILED"); return; }
+    oledAddress = responds(0x3C) ? 0x3C : responds(0x3D) ? 0x3D : 0x3C;
+    oledReady = responds(oledAddress) && oled.begin(oledAddress, false);
+    if (!oledReady) Serial.println("OLED ERROR: user-facing demo unavailable");
+    draw();
+    initTof(true);
+    if (initImu(true)) startCalibration();
+    draw();
+}
+void loop() {
+    commands(); updateImu(); updateTof(); updateCompensation();
+    if (!imuReady && busReady && static_cast<uint32_t>(millis() - lastImuRetry) >= 2000) {
+        lastImuRetry = millis();
+        if (initImu(false)) startCalibration();
+    }
+    if (imuReady && state == State::ERROR && static_cast<uint32_t>(millis() - lastCalRetry) >= CAL_RETRY_MS) {
+        lastCalRetry = millis(); startCalibration();
+    }
+    updateAutoLevel(); updateVerdict(); updateDisplay();
+    if (static_cast<uint32_t>(millis() - lastLog) >= 500) { lastLog = millis(); status(); }
+    yield();
+}

@@ -1,0 +1,11 @@
+--- session 2026-10-04 09:56:38 steps=['STATUS', 'IMU CHECK']
+[   0.00s] >>> SENT STATUS
+[   0.06s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=12771 state=READY pitch=-48.60 roll=-0.30 accel_g=0.793 samples=150 fault=ACCEL CORRECTION OFF OLED=initialized
+[   0.31s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=13000 state=READY pitch=-42.83 roll=0.57 accel_g=1.432 samples=150 fault=ACCEL CORRECTION OFF OLED=initialized
+[   0.31s] >>> SENT IMU CHECK
+[   0.38s] IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+[   0.38s] IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+[   0.75s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=13500 state=READY pitch=-42.34 roll=1.15 accel_g=1.084 samples=150 fault=NONE OLED=initialized
+[   1.26s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=14000 state=READY pitch=-49.42 roll=8.41 accel_g=1.089 samples=150 fault=NONE OLED=initialized
+[   1.76s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=14500 state=READY pitch=-49.14 roll=5.01 accel_g=1.046 samples=150 fault=NONE OLED=initialized
+[   2.26s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1500 (not measured) t=15000 state=READY pitch=-49.58 roll=4.39 accel_g=1.050 samples=150 fault=NONE OLED=initialized

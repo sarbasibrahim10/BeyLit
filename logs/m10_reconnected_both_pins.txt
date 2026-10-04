@@ -1,0 +1,213 @@
+--- session 2026-10-04 11:20:43 steps=['WAIT:5', 'SERVO PIN 18', 'SERVO TEST', 'WAIT:12', 'SERVO PIN 27', 'SERVO TEST']
+[   0.50s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=7000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   1.00s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=7500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   1.50s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=8000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   1.95s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=8500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   2.52s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=9000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   2.95s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=9500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   3.45s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=10000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   3.95s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=10500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   4.45s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=11000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   4.97s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=11500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   5.03s] >>> SENT SERVO PIN 18
+[   5.09s] Servo signal pin = GPIO18
+[   5.39s] >>> SENT SERVO TEST
+[   5.47s] SERVO TEST GPIO18: neutral then 1450 -> 1550 -> 1500 us; commanded position only.
+[   5.47s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=12000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   5.97s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1500 (not measured) t=12500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   6.47s] TRACE t=12968 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1499 attached=1 accel_g=1.002
+[   6.47s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1499 (not measured) t=13000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   6.59s] TRACE t=13114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1498 attached=1 accel_g=1.002
+[   6.72s] TRACE t=13234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1495 attached=1 accel_g=1.002
+[   6.84s] TRACE t=13354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1492 attached=1 accel_g=1.002
+[   6.97s] TRACE t=13474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1489 attached=1 accel_g=1.002
+[   6.97s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1489 (not measured) t=13500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   7.09s] TRACE t=13614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1488 attached=1 accel_g=1.002
+[   7.22s] TRACE t=13734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1485 attached=1 accel_g=1.002
+[   7.34s] TRACE t=13854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1482 attached=1 accel_g=1.002
+[   7.47s] TRACE t=13974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1479 attached=1 accel_g=1.002
+[   7.47s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1479 (not measured) t=14000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   7.59s] TRACE t=14114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1478 attached=1 accel_g=1.002
+[   7.72s] TRACE t=14234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1475 attached=1 accel_g=1.002
+[   7.86s] TRACE t=14354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1472 attached=1 accel_g=1.002
+[   7.99s] TRACE t=14474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1469 attached=1 accel_g=1.002
+[   7.99s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1469 (not measured) t=14500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   8.09s] TRACE t=14614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1468 attached=1 accel_g=1.002
+[   8.24s] TRACE t=14734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1465 attached=1 accel_g=1.002
+[   8.36s] TRACE t=14854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1462 attached=1 accel_g=1.002
+[   8.42s] TRACE t=14974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1459 attached=1 accel_g=1.002
+[   8.49s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1459 (not measured) t=15000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   8.61s] TRACE t=15114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1458 attached=1 accel_g=1.002
+[   8.74s] TRACE t=15234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1455 attached=1 accel_g=1.002
+[   8.80s] TRACE t=15354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1452 attached=1 accel_g=1.002
+[   8.92s] TRACE t=15474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1451 attached=1 accel_g=1.002
+[   8.99s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1451 (not measured) t=15500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   9.12s] TRACE t=15614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1452 attached=1 accel_g=1.002
+[   9.24s] TRACE t=15734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1455 attached=1 accel_g=1.002
+[   9.36s] TRACE t=15854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1458 attached=1 accel_g=1.002
+[   9.42s] TRACE t=15974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1461 attached=1 accel_g=1.002
+[   9.49s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1461 (not measured) t=16000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[   9.61s] TRACE t=16114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1462 attached=1 accel_g=1.002
+[   9.74s] TRACE t=16234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1465 attached=1 accel_g=1.002
+[   9.80s] TRACE t=16354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1468 attached=1 accel_g=1.002
+[   9.92s] TRACE t=16474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1471 attached=1 accel_g=1.002
+[  10.00s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1471 (not measured) t=16500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  10.11s] TRACE t=16614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1472 attached=1 accel_g=1.002
+[  10.24s] TRACE t=16734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1475 attached=1 accel_g=1.002
+[  10.30s] TRACE t=16854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1478 attached=1 accel_g=1.002
+[  10.42s] TRACE t=16974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1481 attached=1 accel_g=1.002
+[  10.49s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1481 (not measured) t=17000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  10.61s] TRACE t=17114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1482 attached=1 accel_g=1.002
+[  10.69s] TRACE t=17234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1485 attached=1 accel_g=1.002
+[  10.81s] TRACE t=17354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1488 attached=1 accel_g=1.002
+[  10.94s] TRACE t=17474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1491 attached=1 accel_g=1.002
+[  11.00s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1491 (not measured) t=17500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  11.06s] TRACE t=17614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1492 attached=1 accel_g=1.002
+[  11.19s] TRACE t=17734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1495 attached=1 accel_g=1.002
+[  11.31s] TRACE t=17854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1498 attached=1 accel_g=1.002
+[  11.44s] TRACE t=17974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1501 attached=1 accel_g=1.002
+[  11.50s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1501 (not measured) t=18000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  11.56s] TRACE t=18114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1502 attached=1 accel_g=1.002
+[  11.69s] TRACE t=18234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1505 attached=1 accel_g=1.002
+[  11.81s] TRACE t=18354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1508 attached=1 accel_g=1.002
+[  11.94s] TRACE t=18474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1511 attached=1 accel_g=1.002
+[  12.00s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1511 (not measured) t=18500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  12.06s] TRACE t=18614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1512 attached=1 accel_g=1.002
+[  12.20s] TRACE t=18734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1515 attached=1 accel_g=1.002
+[  12.33s] TRACE t=18854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1518 attached=1 accel_g=1.002
+[  12.45s] TRACE t=18974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1521 attached=1 accel_g=1.002
+[  12.52s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1521 (not measured) t=19000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  12.58s] TRACE t=19114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1522 attached=1 accel_g=1.002
+[  12.70s] TRACE t=19234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1525 attached=1 accel_g=1.002
+[  12.83s] TRACE t=19354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1528 attached=1 accel_g=1.002
+[  12.95s] TRACE t=19474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1531 attached=1 accel_g=1.002
+[  12.95s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1531 (not measured) t=19500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  13.08s] TRACE t=19614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1532 attached=1 accel_g=1.002
+[  13.20s] TRACE t=19734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1535 attached=1 accel_g=1.002
+[  13.34s] TRACE t=19854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1538 attached=1 accel_g=1.002
+[  13.47s] TRACE t=19974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1541 attached=1 accel_g=1.002
+[  13.47s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1541 (not measured) t=20000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  13.59s] TRACE t=20114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1542 attached=1 accel_g=1.002
+[  13.72s] TRACE t=20234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1545 attached=1 accel_g=1.002
+[  13.84s] TRACE t=20354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1548 attached=1 accel_g=1.002
+[  13.97s] TRACE t=20474 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1549 attached=1 accel_g=1.002
+[  13.97s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1549 (not measured) t=20500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  14.08s] TRACE t=20614 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1548 attached=1 accel_g=1.002
+[  14.20s] TRACE t=20734 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1545 attached=1 accel_g=1.002
+[  14.33s] TRACE t=20854 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1542 attached=1 accel_g=1.002
+[  14.45s] TRACE t=20974 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1539 attached=1 accel_g=1.002
+[  14.45s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1539 (not measured) t=21000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  14.58s] TRACE t=21114 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1538 attached=1 accel_g=1.002
+[  14.72s] TRACE t=21234 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1535 attached=1 accel_g=1.002
+[  14.84s] TRACE t=21354 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1532 attached=1 accel_g=1.002
+[  14.97s] TRACE t=21474 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1529 attached=1 accel_g=1.002
+[  14.97s] COMP=OFF TEST=ON pin=18 axis=PITCH sign=-1 command_us=1529 (not measured) t=21500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  15.09s] TRACE t=21614 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1528 attached=1 accel_g=1.002
+[  15.22s] TRACE t=21734 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1525 attached=1 accel_g=1.002
+[  15.34s] TRACE t=21854 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1522 attached=1 accel_g=1.002
+[  15.42s] SERVO SIGNAL OFF t=21968 reason=TEST 10 s LIMIT last_command_us=1520
+[  15.49s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1520 (not measured) t=22000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  15.99s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1520 (not measured) t=22500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  16.49s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1520 (not measured) t=23000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  17.00s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1520 (not measured) t=23500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  17.49s] COMP=OFF TEST=OFF pin=18 axis=PITCH sign=-1 command_us=1520 (not measured) t=24000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  17.80s] >>> SENT SERVO PIN 27
+[  17.84s] Servo signal pin = GPIO27
+[  17.99s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1520 (not measured) t=24500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  18.11s] >>> SENT SERVO TEST
+[  18.17s] SERVO TEST GPIO27: neutral then 1450 -> 1550 -> 1500 us; commanded position only.
+[  18.47s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=25000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  18.99s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=25500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  19.17s] TRACE t=25675 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1499 attached=1 accel_g=1.002
+[  19.28s] TRACE t=25795 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1496 attached=1 accel_g=1.002
+[  19.41s] TRACE t=25915 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1493 attached=1 accel_g=1.002
+[  19.47s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1491 (not measured) t=26000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  19.59s] TRACE t=26114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1490 attached=1 accel_g=1.002
+[  19.72s] TRACE t=26234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1487 attached=1 accel_g=1.002
+[  19.84s] TRACE t=26354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1484 attached=1 accel_g=1.002
+[  19.97s] TRACE t=26474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1481 attached=1 accel_g=1.002
+[  19.97s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1481 (not measured) t=26500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  20.09s] TRACE t=26614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1480 attached=1 accel_g=1.002
+[  20.22s] TRACE t=26734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1477 attached=1 accel_g=1.002
+[  20.34s] TRACE t=26854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1474 attached=1 accel_g=1.002
+[  20.47s] TRACE t=26974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1471 attached=1 accel_g=1.002
+[  20.47s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1471 (not measured) t=27000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  20.59s] TRACE t=27114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1470 attached=1 accel_g=1.002
+[  20.72s] TRACE t=27234 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1467 attached=1 accel_g=1.002
+[  20.84s] TRACE t=27354 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1464 attached=1 accel_g=1.002
+[  20.99s] TRACE t=27474 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1461 attached=1 accel_g=1.002
+[  20.99s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1461 (not measured) t=27500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  21.09s] TRACE t=27614 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1460 attached=1 accel_g=1.002
+[  21.22s] TRACE t=27734 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1457 attached=1 accel_g=1.002
+[  21.34s] TRACE t=27854 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1454 attached=1 accel_g=1.002
+[  21.47s] TRACE t=27974 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1451 attached=1 accel_g=1.002
+[  21.47s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1451 (not measured) t=28000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  21.61s] TRACE t=28114 mode=TEST axis=PITCH tilt=nan target_us=1450 command_us=1450 attached=1 accel_g=1.002
+[  21.74s] TRACE t=28234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1453 attached=1 accel_g=1.002
+[  21.86s] TRACE t=28354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1456 attached=1 accel_g=1.002
+[  21.92s] TRACE t=28474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1459 attached=1 accel_g=1.002
+[  21.99s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1459 (not measured) t=28500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  22.11s] TRACE t=28614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1460 attached=1 accel_g=1.002
+[  22.24s] TRACE t=28734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1463 attached=1 accel_g=1.002
+[  22.36s] TRACE t=28854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1466 attached=1 accel_g=1.002
+[  22.42s] TRACE t=28974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1469 attached=1 accel_g=1.002
+[  22.49s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1469 (not measured) t=29000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  22.61s] TRACE t=29114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1470 attached=1 accel_g=1.002
+[  22.74s] TRACE t=29234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1473 attached=1 accel_g=1.002
+[  22.80s] TRACE t=29354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1476 attached=1 accel_g=1.002
+[  22.92s] TRACE t=29474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1479 attached=1 accel_g=1.002
+[  22.99s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1479 (not measured) t=29500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  23.12s] TRACE t=29614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1480 attached=1 accel_g=1.002
+[  23.19s] TRACE t=29734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1483 attached=1 accel_g=1.002
+[  23.31s] TRACE t=29854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1486 attached=1 accel_g=1.002
+[  23.44s] TRACE t=29974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1489 attached=1 accel_g=1.002
+[  23.50s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1489 (not measured) t=30000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  23.56s] TRACE t=30114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1490 attached=1 accel_g=1.002
+[  23.69s] TRACE t=30234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1493 attached=1 accel_g=1.002
+[  23.81s] TRACE t=30354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1496 attached=1 accel_g=1.002
+[  23.94s] TRACE t=30474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1499 attached=1 accel_g=1.002
+[  24.00s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1499 (not measured) t=30500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  24.06s] TRACE t=30614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1500 attached=1 accel_g=1.002
+[  24.19s] TRACE t=30734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1503 attached=1 accel_g=1.002
+[  24.31s] TRACE t=30854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1506 attached=1 accel_g=1.002
+[  24.44s] TRACE t=30974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1509 attached=1 accel_g=1.002
+[  24.50s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1509 (not measured) t=31000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  24.56s] TRACE t=31114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1510 attached=1 accel_g=1.002
+[  24.70s] TRACE t=31234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1513 attached=1 accel_g=1.002
+[  24.83s] TRACE t=31354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1516 attached=1 accel_g=1.002
+[  24.95s] TRACE t=31474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1519 attached=1 accel_g=1.002
+[  25.02s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1519 (not measured) t=31500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  25.08s] TRACE t=31614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1520 attached=1 accel_g=1.002
+[  25.20s] TRACE t=31734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1523 attached=1 accel_g=1.002
+[  25.31s] TRACE t=31854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1526 attached=1 accel_g=1.002
+[  25.44s] TRACE t=31974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1529 attached=1 accel_g=1.002
+[  25.50s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1529 (not measured) t=32000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  25.56s] TRACE t=32114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1530 attached=1 accel_g=1.002
+[  25.70s] TRACE t=32234 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1533 attached=1 accel_g=1.002
+[  25.83s] TRACE t=32354 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1536 attached=1 accel_g=1.002
+[  25.95s] TRACE t=32474 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1539 attached=1 accel_g=1.002
+[  25.95s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1539 (not measured) t=32500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  26.08s] TRACE t=32614 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1540 attached=1 accel_g=1.002
+[  26.20s] TRACE t=32734 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1543 attached=1 accel_g=1.002
+[  26.31s] TRACE t=32854 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1546 attached=1 accel_g=1.002
+[  26.45s] TRACE t=32974 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1549 attached=1 accel_g=1.002
+[  26.52s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1549 (not measured) t=33000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  26.58s] TRACE t=33114 mode=TEST axis=PITCH tilt=nan target_us=1550 command_us=1550 attached=1 accel_g=1.002
+[  26.70s] TRACE t=33234 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1547 attached=1 accel_g=1.002
+[  26.83s] TRACE t=33354 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1544 attached=1 accel_g=1.002
+[  26.95s] TRACE t=33474 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1541 attached=1 accel_g=1.002
+[  26.95s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1541 (not measured) t=33500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  27.08s] TRACE t=33614 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1540 attached=1 accel_g=1.002
+[  27.20s] TRACE t=33734 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1537 attached=1 accel_g=1.002
+[  27.33s] TRACE t=33854 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1534 attached=1 accel_g=1.002
+[  27.45s] TRACE t=33974 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1531 attached=1 accel_g=1.002
+[  27.45s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1531 (not measured) t=34000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  27.58s] TRACE t=34114 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1530 attached=1 accel_g=1.002
+[  27.70s] TRACE t=34234 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1527 attached=1 accel_g=1.002
+[  27.83s] TRACE t=34354 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1524 attached=1 accel_g=1.002
+[  27.95s] TRACE t=34474 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1521 attached=1 accel_g=1.002
+[  27.95s] COMP=OFF TEST=ON pin=27 axis=PITCH sign=-1 command_us=1521 (not measured) t=34500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  28.08s] TRACE t=34614 mode=TEST axis=PITCH tilt=nan target_us=1500 command_us=1520 attached=1 accel_g=1.002
+[  28.14s] SERVO SIGNAL OFF t=34675 reason=TEST 10 s LIMIT last_command_us=1519
+[  28.45s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1519 (not measured) t=35000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized
+[  28.97s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1519 (not measured) t=35500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.002 samples=0 fault=REST BOARD FLAT OLED=initialized

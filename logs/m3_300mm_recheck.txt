@@ -1,0 +1,56 @@
+ange_status=0 api_status=0 fault=NONE
+t=1021000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=1021109 mm=211 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021208 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021308 mm=211 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021408 mm=217 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021508 mm=211 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021608 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021708 mm=215 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021808 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1021908 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+t=1022000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=1022109 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1022208 mm=215 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1022308 mm=212 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1022408 mm=212 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1022508 mm=209 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1022608 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1022708 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1022808 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1022888 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1022988 mm=213 valid=1 range_status=0 api_status=0 fault=NONE
+t=1023000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=1023109 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1023188 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1023288 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1023388 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1023488 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1023588 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1023688 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1023788 mm=215 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1023888 mm=211 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1023988 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+t=1024000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=1024109 mm=214 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1024188 mm=217 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1024288 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1024388 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1024488 mm=208 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1024588 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1024688 mm=215 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1024768 mm=213 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1024868 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1024968 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+t=1025000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=1025109 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025168 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025268 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025368 mm=216 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=1025468 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025568 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025668 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025768 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025868 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+RANGE t=1025968 mm=null valid=0 range_status=2 api_status=0 fault=INVALID RANGE
+t=1026000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)

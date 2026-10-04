@@ -1,0 +1,55 @@
+RANGE t=887548 mm=60 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=887648 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=887748 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=887848 mm=62 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=887948 mm=57 valid=1 range_status=0 api_status=0 fault=NONE
+t=888000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=888109 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888128 mm=60 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888228 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888328 mm=62 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888428 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888528 mm=61 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888628 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888728 mm=57 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888828 mm=60 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=888928 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+t=889000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=889109 mm=61 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889128 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889228 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889328 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889428 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889528 mm=60 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889628 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889708 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889808 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=889908 mm=57 valid=1 range_status=0 api_status=0 fault=NONE
+t=890000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=890109 mm=61 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890208 mm=61 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890308 mm=54 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890408 mm=56 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890508 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890608 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890708 mm=61 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890808 mm=55 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=890908 mm=62 valid=1 range_status=0 api_status=0 fault=NONE
+t=891000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=891109 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891208 mm=57 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891308 mm=60 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891388 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891488 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891588 mm=60 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891688 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891788 mm=61 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891888 mm=60 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=891988 mm=62 valid=1 range_status=0 api_status=0 fault=NONE
+t=892000 OLED=initialized; verify visually SG90=OFF command_us=1500 (not measured)
+RANGE t=892109 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=892188 mm=56 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=892288 mm=59 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=892388 mm=58 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=892488 mm=57 valid=1 range_status=0 api_status=0 fault=NONE
+RANGE t=892588 mm=58 valid=1 ran

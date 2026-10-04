@@ -1,0 +1,29 @@
+--- session 2026-10-04 11:38:10 steps=['WAIT:4', 'CALIBRATE']
+[   0.39s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=54000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   0.83s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=54500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   1.33s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=55000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   1.84s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=55500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   2.34s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=56000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   2.84s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=56500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   3.34s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=57000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   3.84s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=57500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   4.03s] >>> SENT CALIBRATE
+[   4.09s] HOLD STILL: calibration attempt 1/3
+[   4.34s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=58000 state=CALIBRATING pitch=null roll=null accel_g=1.042 samples=0 fault=NONE OLED=initialized
+[   4.84s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=58500 state=CALIBRATING pitch=null roll=null accel_g=1.042 samples=0 fault=NONE OLED=initialized
+[   5.36s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=59000 state=CALIBRATING pitch=null roll=null accel_g=1.039 samples=14 fault=NONE OLED=initialized
+[   5.86s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=59500 state=CALIBRATING pitch=null roll=null accel_g=1.039 samples=34 fault=NONE OLED=initialized
+[   6.36s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=60000 state=CALIBRATING pitch=null roll=null accel_g=1.039 samples=54 fault=NONE OLED=initialized
+[   6.88s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=60500 state=CALIBRATING pitch=null roll=null accel_g=1.040 samples=74 fault=NONE OLED=initialized
+[   7.36s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=61000 state=CALIBRATING pitch=null roll=null accel_g=1.041 samples=94 fault=NONE OLED=initialized
+[   7.86s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=61500 state=CALIBRATING pitch=null roll=null accel_g=1.040 samples=114 fault=NONE OLED=initialized
+[   8.36s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=62000 state=CALIBRATING pitch=null roll=null accel_g=1.041 samples=134 fault=NONE OLED=initialized
+[   8.73s] CALIBRATION OK reference pitch=0.69 roll=1.53 deg; gyro bias rad/s=-0.02852,0.07265,-0.00544
+[   8.86s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=62500 state=READY pitch=0.01 roll=-0.00 accel_g=1.038 samples=150 fault=NONE OLED=initialized
+[   9.38s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=63000 state=READY pitch=0.01 roll=-0.00 accel_g=1.038 samples=150 fault=NONE OLED=initialized
+[   9.88s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=63500 state=READY pitch=-0.00 roll=-0.02 accel_g=1.038 samples=150 fault=NONE OLED=initialized
+--- session 2026-10-04 11:38:20 steps=['STATUS']
+[   0.00s] >>> SENT STATUS
+[   0.06s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=63674 state=READY pitch=0.01 roll=-0.01 accel_g=1.041 samples=150 fault=NONE OLED=initialized
+[   0.38s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=64000 state=READY pitch=0.02 roll=-0.00 accel_g=1.037 samples=150 fault=NONE OLED=initialized
+[   0.89s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=64500 state=READY pitch=0.01 roll=-0.01 accel_g=1.043 samples=150 fault=NONE OLED=initialized

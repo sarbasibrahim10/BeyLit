@@ -1,0 +1,7 @@
+--- session 2026-10-04 12:44:41 steps=['STATUS']
+[   0.08s] >>> SENT STATUS
+[   0.12s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=579558 state=READY pitch=-17.63 roll=78.32 accel_g=1.018 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT
+[   0.25s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=579710 state=READY pitch=-17.60 roll=78.29 accel_g=1.029 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT
+[   0.75s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=580210 state=READY pitch=-17.59 roll=78.29 accel_g=1.022 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=4 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT
+[   1.26s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=580710 state=READY pitch=-17.51 roll=78.27 accel_g=1.019 samples=150 fault=NONE OLED=initialized dist_mm=2249 range_status=4 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT
+[   1.76s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=581210 state=READY pitch=-17.59 roll=78.31 accel_g=1.024 samples=150 fault=NONE OLED=initialized dist_mm=null range_status=2 dist_fault=NO DIST READING verdict=ASSIST reason=SIDE TILT

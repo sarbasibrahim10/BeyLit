@@ -1,0 +1,25 @@
+t=40784 state=SENSOR_ERROR pitch=null roll=null accel_g=1.014 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+HOLD STILL: calibration attempt 1/3
+t=41000 state=CALIBRATING pitch=null roll=null accel_g=1.015 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+t=41500 state=CALIBRATING pitch=null roll=null accel_g=1.009 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+HOLD STILL: calibration attempt 2/3
+t=42000 state=CALIBRATING pitch=null roll=null accel_g=1.016 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+t=42500 state=CALIBRATING pitch=null roll=null accel_g=1.014 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+HOLD STILL: calibration attempt 3/3
+t=43000 state=CALIBRATING pitch=null roll=null accel_g=1.013 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+t=43500 state=CALIBRATING pitch=null roll=null accel_g=1.013 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+IMU ERROR: CALIBRATION MOTION; servo OFF, compensation OFF
+t=44000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=44500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=45000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=45500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=46000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=46500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=47000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=47500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=48000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=48500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=49000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=49500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=50000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized
+t=50500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.012 samples=0 servo=OFF compensation=OFF fault=CALIBRATION MOTION OLED=initialized

@@ -1,0 +1,207 @@
+--- session 2026-10-04 09:58:18 steps=['SERVO TEST']
+[   0.00s] >>> SENT SERVO TEST
+[   0.06s] SERVO TEST: neutral then 1450 -> 1550 -> 1500 us; commanded position only.
+[   0.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1500 (not measured) t=113000 state=READY pitch=-19.98 roll=32.08 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[   0.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1500 (not measured) t=113500 state=READY pitch=-19.96 roll=32.12 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[   1.08s] TRACE t=113708 mode=TEST axis=ROLL tilt=32.11 target_us=1450 command_us=1499 attached=1 accel_g=1.023
+[   1.14s] TRACE t=113828 mode=TEST axis=ROLL tilt=32.11 target_us=1450 command_us=1496 attached=1 accel_g=1.024
+[   1.27s] TRACE t=113948 mode=TEST axis=ROLL tilt=32.11 target_us=1450 command_us=1493 attached=1 accel_g=1.020
+[   1.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1492 (not measured) t=114000 state=READY pitch=-19.98 roll=32.11 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[   1.45s] TRACE t=114117 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1491 attached=1 accel_g=1.024
+[   1.56s] TRACE t=114237 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1488 attached=1 accel_g=1.023
+[   1.69s] TRACE t=114357 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1485 attached=1 accel_g=1.020
+[   1.81s] TRACE t=114477 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1482 attached=1 accel_g=1.021
+[   1.88s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1482 (not measured) t=114500 state=READY pitch=-19.96 roll=32.16 accel_g=1.023 samples=150 fault=NONE OLED=initialized
+[   1.94s] TRACE t=114617 mode=TEST axis=ROLL tilt=32.14 target_us=1450 command_us=1481 attached=1 accel_g=1.021
+[   2.06s] TRACE t=114737 mode=TEST axis=ROLL tilt=32.14 target_us=1450 command_us=1478 attached=1 accel_g=1.018
+[   2.19s] TRACE t=114857 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1475 attached=1 accel_g=1.023
+[   2.31s] TRACE t=114977 mode=TEST axis=ROLL tilt=32.17 target_us=1450 command_us=1472 attached=1 accel_g=1.025
+[   2.38s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1472 (not measured) t=115000 state=READY pitch=-19.97 roll=32.16 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[   2.44s] TRACE t=115117 mode=TEST axis=ROLL tilt=32.14 target_us=1450 command_us=1471 attached=1 accel_g=1.021
+[   2.56s] TRACE t=115237 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1468 attached=1 accel_g=1.026
+[   2.69s] TRACE t=115357 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1465 attached=1 accel_g=1.022
+[   2.83s] TRACE t=115477 mode=TEST axis=ROLL tilt=32.16 target_us=1450 command_us=1462 attached=1 accel_g=1.019
+[   2.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1462 (not measured) t=115500 state=READY pitch=-19.96 roll=32.17 accel_g=1.027 samples=150 fault=NONE OLED=initialized
+[   2.94s] TRACE t=115617 mode=TEST axis=ROLL tilt=32.23 target_us=1450 command_us=1461 attached=1 accel_g=1.025
+[   3.06s] TRACE t=115737 mode=TEST axis=ROLL tilt=32.22 target_us=1450 command_us=1458 attached=1 accel_g=1.020
+[   3.19s] TRACE t=115857 mode=TEST axis=ROLL tilt=32.21 target_us=1450 command_us=1455 attached=1 accel_g=1.022
+[   3.31s] TRACE t=115977 mode=TEST axis=ROLL tilt=32.24 target_us=1450 command_us=1452 attached=1 accel_g=1.022
+[   3.31s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1452 (not measured) t=116000 state=READY pitch=-19.95 roll=32.24 accel_g=1.022 samples=150 fault=NONE OLED=initialized
+[   3.44s] TRACE t=116117 mode=TEST axis=ROLL tilt=32.19 target_us=1450 command_us=1451 attached=1 accel_g=1.019
+[   3.56s] TRACE t=116237 mode=TEST axis=ROLL tilt=32.20 target_us=1550 command_us=1452 attached=1 accel_g=1.021
+[   3.70s] TRACE t=116357 mode=TEST axis=ROLL tilt=32.21 target_us=1550 command_us=1455 attached=1 accel_g=1.026
+[   3.83s] TRACE t=116477 mode=TEST axis=ROLL tilt=32.21 target_us=1550 command_us=1458 attached=1 accel_g=1.024
+[   3.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1458 (not measured) t=116500 state=READY pitch=-19.96 roll=32.21 accel_g=1.022 samples=150 fault=NONE OLED=initialized
+[   3.94s] TRACE t=116617 mode=TEST axis=ROLL tilt=32.22 target_us=1550 command_us=1459 attached=1 accel_g=1.026
+[   4.08s] TRACE t=116737 mode=TEST axis=ROLL tilt=32.23 target_us=1550 command_us=1462 attached=1 accel_g=1.023
+[   4.20s] TRACE t=116857 mode=TEST axis=ROLL tilt=32.23 target_us=1550 command_us=1465 attached=1 accel_g=1.024
+[   4.33s] TRACE t=116977 mode=TEST axis=ROLL tilt=32.23 target_us=1550 command_us=1468 attached=1 accel_g=1.019
+[   4.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1468 (not measured) t=117000 state=READY pitch=-19.96 roll=32.23 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[   4.45s] TRACE t=117117 mode=TEST axis=ROLL tilt=32.25 target_us=1550 command_us=1469 attached=1 accel_g=1.019
+[   4.58s] TRACE t=117237 mode=TEST axis=ROLL tilt=32.24 target_us=1550 command_us=1472 attached=1 accel_g=1.018
+[   4.70s] TRACE t=117357 mode=TEST axis=ROLL tilt=32.24 target_us=1550 command_us=1475 attached=1 accel_g=1.021
+[   4.83s] TRACE t=117477 mode=TEST axis=ROLL tilt=32.24 target_us=1550 command_us=1478 attached=1 accel_g=1.022
+[   4.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1478 (not measured) t=117500 state=READY pitch=-19.96 roll=32.24 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[   4.95s] TRACE t=117617 mode=TEST axis=ROLL tilt=32.21 target_us=1550 command_us=1479 attached=1 accel_g=1.019
+[   5.08s] TRACE t=117737 mode=TEST axis=ROLL tilt=32.21 target_us=1550 command_us=1482 attached=1 accel_g=1.026
+[   5.20s] TRACE t=117857 mode=TEST axis=ROLL tilt=32.22 target_us=1550 command_us=1485 attached=1 accel_g=1.023
+[   5.33s] TRACE t=117977 mode=TEST axis=ROLL tilt=32.24 target_us=1550 command_us=1488 attached=1 accel_g=1.020
+[   5.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1488 (not measured) t=118000 state=READY pitch=-19.98 roll=32.24 accel_g=1.029 samples=150 fault=NONE OLED=initialized
+[   5.45s] TRACE t=118117 mode=TEST axis=ROLL tilt=32.28 target_us=1550 command_us=1489 attached=1 accel_g=1.022
+[   5.58s] TRACE t=118237 mode=TEST axis=ROLL tilt=32.27 target_us=1550 command_us=1492 attached=1 accel_g=1.019
+[   5.70s] TRACE t=118357 mode=TEST axis=ROLL tilt=32.27 target_us=1550 command_us=1495 attached=1 accel_g=1.022
+[   5.83s] TRACE t=118477 mode=TEST axis=ROLL tilt=32.27 target_us=1550 command_us=1498 attached=1 accel_g=1.022
+[   5.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1498 (not measured) t=118500 state=READY pitch=-19.99 roll=32.27 accel_g=1.020 samples=150 fault=NONE OLED=initialized
+[   5.95s] TRACE t=118617 mode=TEST axis=ROLL tilt=32.23 target_us=1550 command_us=1499 attached=1 accel_g=1.020
+[   6.08s] TRACE t=118737 mode=TEST axis=ROLL tilt=32.24 target_us=1550 command_us=1502 attached=1 accel_g=1.027
+[   6.20s] TRACE t=118857 mode=TEST axis=ROLL tilt=32.26 target_us=1550 command_us=1505 attached=1 accel_g=1.024
+[   6.33s] TRACE t=118977 mode=TEST axis=ROLL tilt=32.28 target_us=1550 command_us=1508 attached=1 accel_g=1.022
+[   6.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1508 (not measured) t=119000 state=READY pitch=-19.99 roll=32.28 accel_g=1.023 samples=150 fault=NONE OLED=initialized
+[   6.45s] TRACE t=119117 mode=TEST axis=ROLL tilt=32.32 target_us=1550 command_us=1509 attached=1 accel_g=1.022
+[   6.58s] TRACE t=119237 mode=TEST axis=ROLL tilt=32.31 target_us=1550 command_us=1512 attached=1 accel_g=1.022
+[   6.70s] TRACE t=119357 mode=TEST axis=ROLL tilt=32.31 target_us=1550 command_us=1515 attached=1 accel_g=1.020
+[   6.83s] TRACE t=119477 mode=TEST axis=ROLL tilt=32.32 target_us=1550 command_us=1518 attached=1 accel_g=1.020
+[   6.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1518 (not measured) t=119500 state=READY pitch=-19.98 roll=32.32 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[   6.94s] TRACE t=119617 mode=TEST axis=ROLL tilt=32.33 target_us=1550 command_us=1519 attached=1 accel_g=1.019
+[   7.08s] TRACE t=119737 mode=TEST axis=ROLL tilt=32.34 target_us=1550 command_us=1522 attached=1 accel_g=1.021
+[   7.20s] TRACE t=119857 mode=TEST axis=ROLL tilt=32.35 target_us=1550 command_us=1525 attached=1 accel_g=1.023
+[   7.33s] TRACE t=119977 mode=TEST axis=ROLL tilt=32.34 target_us=1550 command_us=1528 attached=1 accel_g=1.023
+[   7.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1528 (not measured) t=120000 state=READY pitch=-19.97 roll=32.34 accel_g=1.018 samples=150 fault=NONE OLED=initialized
+[   7.45s] TRACE t=120117 mode=TEST axis=ROLL tilt=32.36 target_us=1550 command_us=1529 attached=1 accel_g=1.022
+[   7.58s] TRACE t=120237 mode=TEST axis=ROLL tilt=32.38 target_us=1550 command_us=1532 attached=1 accel_g=1.025
+[   7.70s] TRACE t=120357 mode=TEST axis=ROLL tilt=32.39 target_us=1550 command_us=1535 attached=1 accel_g=1.022
+[   7.83s] TRACE t=120477 mode=TEST axis=ROLL tilt=32.36 target_us=1550 command_us=1538 attached=1 accel_g=1.022
+[   7.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1538 (not measured) t=120500 state=READY pitch=-19.97 roll=32.37 accel_g=1.022 samples=150 fault=NONE OLED=initialized
+[   7.95s] TRACE t=120617 mode=TEST axis=ROLL tilt=32.38 target_us=1550 command_us=1539 attached=1 accel_g=1.023
+[   8.08s] TRACE t=120737 mode=TEST axis=ROLL tilt=32.37 target_us=1550 command_us=1542 attached=1 accel_g=1.019
+[   8.20s] TRACE t=120857 mode=TEST axis=ROLL tilt=32.34 target_us=1550 command_us=1545 attached=1 accel_g=1.024
+[   8.33s] TRACE t=120977 mode=TEST axis=ROLL tilt=32.35 target_us=1550 command_us=1548 attached=1 accel_g=1.025
+[   8.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1548 (not measured) t=121000 state=READY pitch=-19.97 roll=32.34 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[   8.45s] TRACE t=121117 mode=TEST axis=ROLL tilt=32.35 target_us=1550 command_us=1549 attached=1 accel_g=1.021
+[   8.56s] TRACE t=121237 mode=TEST axis=ROLL tilt=32.34 target_us=1500 command_us=1548 attached=1 accel_g=1.024
+[   8.70s] TRACE t=121357 mode=TEST axis=ROLL tilt=32.35 target_us=1500 command_us=1545 attached=1 accel_g=1.021
+[   8.83s] TRACE t=121477 mode=TEST axis=ROLL tilt=32.33 target_us=1500 command_us=1542 attached=1 accel_g=1.023
+[   8.83s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1542 (not measured) t=121500 state=READY pitch=-19.96 roll=32.33 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[   8.95s] TRACE t=121617 mode=TEST axis=ROLL tilt=32.37 target_us=1500 command_us=1541 attached=1 accel_g=1.022
+[   9.08s] TRACE t=121737 mode=TEST axis=ROLL tilt=32.39 target_us=1500 command_us=1538 attached=1 accel_g=1.025
+[   9.20s] TRACE t=121857 mode=TEST axis=ROLL tilt=32.38 target_us=1500 command_us=1535 attached=1 accel_g=1.024
+[   9.33s] TRACE t=121977 mode=TEST axis=ROLL tilt=32.39 target_us=1500 command_us=1532 attached=1 accel_g=1.022
+[   9.33s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1532 (not measured) t=122000 state=READY pitch=-19.97 roll=32.39 accel_g=1.025 samples=150 fault=NONE OLED=initialized
+[   9.45s] TRACE t=122117 mode=TEST axis=ROLL tilt=32.42 target_us=1500 command_us=1531 attached=1 accel_g=1.017
+[   9.58s] TRACE t=122237 mode=TEST axis=ROLL tilt=32.39 target_us=1500 command_us=1528 attached=1 accel_g=1.021
+[   9.72s] TRACE t=122357 mode=TEST axis=ROLL tilt=32.38 target_us=1500 command_us=1525 attached=1 accel_g=1.020
+[   9.84s] TRACE t=122477 mode=TEST axis=ROLL tilt=32.37 target_us=1500 command_us=1522 attached=1 accel_g=1.024
+[   9.84s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1522 (not measured) t=122500 state=READY pitch=-20.00 roll=32.37 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[   9.97s] TRACE t=122617 mode=TEST axis=ROLL tilt=32.18 target_us=1500 command_us=1521 attached=1 accel_g=0.995
+[  10.03s] SERVO SIGNAL OFF t=122708 reason=TEST 10 s LIMIT last_command_us=1519
+[  10.34s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=123000 state=READY pitch=-19.54 roll=32.42 accel_g=1.025 samples=150 fault=NONE OLED=initialized
+[  10.84s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=123500 state=READY pitch=-19.38 roll=32.52 accel_g=1.023 samples=150 fault=NONE OLED=initialized
+[  11.34s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=124000 state=READY pitch=-19.30 roll=32.52 accel_g=1.018 samples=150 fault=NONE OLED=initialized
+--- session 2026-10-04 10:00:34 steps=['WAIT:5', 'SERVO TEST']
+[   0.39s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=249500 state=READY pitch=-13.09 roll=35.75 accel_g=1.013 samples=150 fault=NONE OLED=initialized
+[   0.89s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=250000 state=READY pitch=-13.10 roll=35.73 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[   1.39s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=250500 state=READY pitch=-13.13 roll=35.72 accel_g=1.014 samples=150 fault=NONE OLED=initialized
+[   1.91s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=251000 state=READY pitch=-13.10 roll=35.74 accel_g=1.015 samples=150 fault=NONE OLED=initialized
+[   2.41s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=251500 state=READY pitch=-12.54 roll=35.89 accel_g=1.007 samples=150 fault=NONE OLED=initialized
+[   2.91s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=252000 state=READY pitch=-12.33 roll=36.07 accel_g=1.016 samples=150 fault=NONE OLED=initialized
+[   3.39s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=252500 state=READY pitch=-14.49 roll=34.68 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[   3.89s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=253000 state=READY pitch=-16.13 roll=34.43 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[   4.39s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=253500 state=READY pitch=-16.84 roll=34.42 accel_g=1.016 samples=150 fault=NONE OLED=initialized
+[   4.89s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=254000 state=READY pitch=-17.04 roll=34.76 accel_g=1.033 samples=150 fault=NONE OLED=initialized
+[   5.02s] >>> SENT SERVO TEST
+[   5.08s] SERVO TEST: neutral then 1450 -> 1550 -> 1500 us; commanded position only.
+[   5.39s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1500 (not measured) t=254500 state=READY pitch=-17.44 roll=35.01 accel_g=1.011 samples=150 fault=NONE OLED=initialized
+[   5.91s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1500 (not measured) t=255000 state=READY pitch=-17.65 roll=35.06 accel_g=1.006 samples=150 fault=NONE OLED=initialized
+[   6.08s] TRACE t=255163 mode=TEST axis=ROLL tilt=35.19 target_us=1450 command_us=1499 attached=1 accel_g=1.033
+[   6.14s] TRACE t=255283 mode=TEST axis=ROLL tilt=35.17 target_us=1450 command_us=1496 attached=1 accel_g=1.018
+[   6.27s] TRACE t=255403 mode=TEST axis=ROLL tilt=35.14 target_us=1450 command_us=1493 attached=1 accel_g=1.015
+[   6.41s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1491 (not measured) t=255500 state=READY pitch=-17.75 roll=35.12 accel_g=1.025 samples=150 fault=NONE OLED=initialized
+[   6.53s] TRACE t=255617 mode=TEST axis=ROLL tilt=35.12 target_us=1450 command_us=1490 attached=1 accel_g=1.016
+[   6.64s] TRACE t=255737 mode=TEST axis=ROLL tilt=35.10 target_us=1450 command_us=1487 attached=1 accel_g=1.017
+[   6.77s] TRACE t=255857 mode=TEST axis=ROLL tilt=35.07 target_us=1450 command_us=1484 attached=1 accel_g=1.018
+[   6.89s] TRACE t=255977 mode=TEST axis=ROLL tilt=35.06 target_us=1450 command_us=1481 attached=1 accel_g=1.025
+[   6.89s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1481 (not measured) t=256000 state=READY pitch=-17.78 roll=35.04 accel_g=1.019 samples=150 fault=NONE OLED=initialized
+[   7.02s] TRACE t=256117 mode=TEST axis=ROLL tilt=35.03 target_us=1450 command_us=1480 attached=1 accel_g=1.016
+[   7.14s] TRACE t=256237 mode=TEST axis=ROLL tilt=35.03 target_us=1450 command_us=1477 attached=1 accel_g=1.023
+[   7.27s] TRACE t=256357 mode=TEST axis=ROLL tilt=34.98 target_us=1450 command_us=1474 attached=1 accel_g=1.019
+[   7.39s] TRACE t=256477 mode=TEST axis=ROLL tilt=34.96 target_us=1450 command_us=1471 attached=1 accel_g=1.020
+[   7.39s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1471 (not measured) t=256500 state=READY pitch=-17.74 roll=34.96 accel_g=1.022 samples=150 fault=NONE OLED=initialized
+[   7.53s] TRACE t=256617 mode=TEST axis=ROLL tilt=34.94 target_us=1450 command_us=1470 attached=1 accel_g=1.025
+[   7.66s] TRACE t=256737 mode=TEST axis=ROLL tilt=34.93 target_us=1450 command_us=1467 attached=1 accel_g=1.020
+[   7.77s] TRACE t=256857 mode=TEST axis=ROLL tilt=34.92 target_us=1450 command_us=1464 attached=1 accel_g=1.015
+[   7.89s] TRACE t=256977 mode=TEST axis=ROLL tilt=34.90 target_us=1450 command_us=1461 attached=1 accel_g=1.018
+[   7.89s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1461 (not measured) t=257000 state=READY pitch=-17.75 roll=34.90 accel_g=1.020 samples=150 fault=NONE OLED=initialized
+[   8.02s] TRACE t=257117 mode=TEST axis=ROLL tilt=34.90 target_us=1450 command_us=1460 attached=1 accel_g=1.014
+[   8.16s] TRACE t=257237 mode=TEST axis=ROLL tilt=34.90 target_us=1450 command_us=1457 attached=1 accel_g=1.014
+[   8.28s] TRACE t=257357 mode=TEST axis=ROLL tilt=34.92 target_us=1450 command_us=1454 attached=1 accel_g=1.019
+[   8.34s] TRACE t=257477 mode=TEST axis=ROLL tilt=34.90 target_us=1450 command_us=1451 attached=1 accel_g=1.027
+[   8.41s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1451 (not measured) t=257500 state=READY pitch=-17.72 roll=34.87 accel_g=1.014 samples=150 fault=NONE OLED=initialized
+[   8.53s] TRACE t=257617 mode=TEST axis=ROLL tilt=34.81 target_us=1450 command_us=1450 attached=1 accel_g=1.020
+[   8.66s] TRACE t=257737 mode=TEST axis=ROLL tilt=34.81 target_us=1550 command_us=1453 attached=1 accel_g=1.026
+[   8.77s] TRACE t=257857 mode=TEST axis=ROLL tilt=34.81 target_us=1550 command_us=1456 attached=1 accel_g=1.024
+[   8.89s] TRACE t=257977 mode=TEST axis=ROLL tilt=34.82 target_us=1550 command_us=1459 attached=1 accel_g=1.017
+[   8.89s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1459 (not measured) t=258000 state=READY pitch=-17.60 roll=34.82 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[   9.02s] TRACE t=258117 mode=TEST axis=ROLL tilt=34.88 target_us=1550 command_us=1460 attached=1 accel_g=1.023
+[   9.14s] TRACE t=258237 mode=TEST axis=ROLL tilt=34.79 target_us=1550 command_us=1463 attached=1 accel_g=1.013
+[   9.27s] TRACE t=258357 mode=TEST axis=ROLL tilt=34.74 target_us=1550 command_us=1466 attached=1 accel_g=1.012
+[   9.39s] TRACE t=258477 mode=TEST axis=ROLL tilt=34.75 target_us=1550 command_us=1469 attached=1 accel_g=1.016
+[   9.39s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1469 (not measured) t=258500 state=READY pitch=-17.56 roll=34.77 accel_g=1.016 samples=150 fault=NONE OLED=initialized
+[   9.52s] TRACE t=258617 mode=TEST axis=ROLL tilt=34.82 target_us=1550 command_us=1470 attached=1 accel_g=1.016
+[   9.64s] TRACE t=258737 mode=TEST axis=ROLL tilt=34.85 target_us=1550 command_us=1473 attached=1 accel_g=1.023
+[   9.77s] TRACE t=258857 mode=TEST axis=ROLL tilt=34.86 target_us=1550 command_us=1476 attached=1 accel_g=1.022
+[   9.89s] TRACE t=258977 mode=TEST axis=ROLL tilt=34.86 target_us=1550 command_us=1479 attached=1 accel_g=1.021
+[   9.89s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1479 (not measured) t=259000 state=READY pitch=-17.59 roll=34.85 accel_g=1.018 samples=150 fault=NONE OLED=initialized
+[  10.02s] TRACE t=259117 mode=TEST axis=ROLL tilt=34.84 target_us=1550 command_us=1480 attached=1 accel_g=1.018
+[  10.14s] TRACE t=259237 mode=TEST axis=ROLL tilt=34.87 target_us=1550 command_us=1483 attached=1 accel_g=1.022
+[  10.27s] TRACE t=259357 mode=TEST axis=ROLL tilt=34.87 target_us=1550 command_us=1486 attached=1 accel_g=1.023
+[  10.39s] TRACE t=259477 mode=TEST axis=ROLL tilt=34.80 target_us=1550 command_us=1489 attached=1 accel_g=1.016
+[  10.39s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1489 (not measured) t=259500 state=READY pitch=-17.51 roll=34.80 accel_g=1.022 samples=150 fault=NONE OLED=initialized
+[  10.52s] TRACE t=259617 mode=TEST axis=ROLL tilt=34.89 target_us=1550 command_us=1490 attached=1 accel_g=1.020
+[  10.66s] TRACE t=259737 mode=TEST axis=ROLL tilt=34.86 target_us=1550 command_us=1493 attached=1 accel_g=1.017
+[  10.78s] TRACE t=259857 mode=TEST axis=ROLL tilt=34.83 target_us=1550 command_us=1496 attached=1 accel_g=1.013
+[  10.84s] TRACE t=259977 mode=TEST axis=ROLL tilt=34.87 target_us=1550 command_us=1499 attached=1 accel_g=1.021
+[  10.91s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1499 (not measured) t=260000 state=READY pitch=-17.48 roll=34.86 accel_g=1.020 samples=150 fault=NONE OLED=initialized
+[  11.03s] TRACE t=260117 mode=TEST axis=ROLL tilt=34.81 target_us=1550 command_us=1500 attached=1 accel_g=1.013
+[  11.16s] TRACE t=260237 mode=TEST axis=ROLL tilt=34.82 target_us=1550 command_us=1503 attached=1 accel_g=1.016
+[  11.22s] TRACE t=260357 mode=TEST axis=ROLL tilt=34.84 target_us=1550 command_us=1506 attached=1 accel_g=1.025
+[  11.34s] TRACE t=260477 mode=TEST axis=ROLL tilt=34.84 target_us=1550 command_us=1509 attached=1 accel_g=1.023
+[  11.41s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1509 (not measured) t=260500 state=READY pitch=-17.49 roll=34.82 accel_g=1.017 samples=150 fault=NONE OLED=initialized
+[  11.55s] TRACE t=260617 mode=TEST axis=ROLL tilt=34.81 target_us=1550 command_us=1510 attached=1 accel_g=1.022
+[  11.61s] TRACE t=260737 mode=TEST axis=ROLL tilt=34.83 target_us=1550 command_us=1513 attached=1 accel_g=1.021
+[  11.72s] TRACE t=260857 mode=TEST axis=ROLL tilt=34.83 target_us=1550 command_us=1516 attached=1 accel_g=1.019
+[  11.84s] TRACE t=260977 mode=TEST axis=ROLL tilt=34.83 target_us=1550 command_us=1519 attached=1 accel_g=1.015
+[  11.91s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1519 (not measured) t=261000 state=READY pitch=-17.53 roll=34.85 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[  12.03s] TRACE t=261117 mode=TEST axis=ROLL tilt=34.87 target_us=1550 command_us=1520 attached=1 accel_g=1.018
+[  12.09s] TRACE t=261237 mode=TEST axis=ROLL tilt=34.85 target_us=1550 command_us=1523 attached=1 accel_g=1.021
+[  12.24s] TRACE t=261357 mode=TEST axis=ROLL tilt=34.85 target_us=1550 command_us=1526 attached=1 accel_g=1.017
+[  12.36s] TRACE t=261477 mode=TEST axis=ROLL tilt=34.84 target_us=1550 command_us=1529 attached=1 accel_g=1.022
+[  12.42s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1529 (not measured) t=261500 state=READY pitch=-17.49 roll=34.83 accel_g=1.020 samples=150 fault=NONE OLED=initialized
+[  12.49s] TRACE t=261617 mode=TEST axis=ROLL tilt=34.74 target_us=1550 command_us=1530 attached=1 accel_g=1.016
+[  12.61s] TRACE t=261737 mode=TEST axis=ROLL tilt=34.76 target_us=1550 command_us=1533 attached=1 accel_g=1.019
+[  12.72s] TRACE t=261857 mode=TEST axis=ROLL tilt=34.78 target_us=1550 command_us=1536 attached=1 accel_g=1.022
+[  12.84s] TRACE t=261977 mode=TEST axis=ROLL tilt=34.80 target_us=1550 command_us=1539 attached=1 accel_g=1.021
+[  12.91s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1539 (not measured) t=262000 state=READY pitch=-17.49 roll=34.80 accel_g=1.014 samples=150 fault=NONE OLED=initialized
+[  13.03s] TRACE t=262117 mode=TEST axis=ROLL tilt=34.84 target_us=1550 command_us=1540 attached=1 accel_g=1.018
+[  13.09s] TRACE t=262237 mode=TEST axis=ROLL tilt=34.83 target_us=1550 command_us=1543 attached=1 accel_g=1.018
+[  13.24s] TRACE t=262357 mode=TEST axis=ROLL tilt=34.85 target_us=1550 command_us=1546 attached=1 accel_g=1.017
+[  13.36s] TRACE t=262477 mode=TEST axis=ROLL tilt=34.85 target_us=1550 command_us=1549 attached=1 accel_g=1.014
+[  13.42s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1549 (not measured) t=262500 state=READY pitch=-17.48 roll=34.86 accel_g=1.024 samples=150 fault=NONE OLED=initialized
+[  13.49s] TRACE t=262617 mode=TEST axis=ROLL tilt=34.87 target_us=1550 command_us=1550 attached=1 accel_g=1.019
+[  13.61s] TRACE t=262737 mode=TEST axis=ROLL tilt=34.86 target_us=1500 command_us=1547 attached=1 accel_g=1.016
+[  13.72s] TRACE t=262857 mode=TEST axis=ROLL tilt=34.86 target_us=1500 command_us=1544 attached=1 accel_g=1.016
+[  13.86s] TRACE t=262977 mode=TEST axis=ROLL tilt=34.89 target_us=1500 command_us=1541 attached=1 accel_g=1.023
+[  13.92s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1541 (not measured) t=263000 state=READY pitch=-17.49 roll=34.89 accel_g=1.013 samples=150 fault=NONE OLED=initialized
+[  13.99s] TRACE t=263117 mode=TEST axis=ROLL tilt=34.81 target_us=1500 command_us=1540 attached=1 accel_g=1.017
+[  14.09s] TRACE t=263237 mode=TEST axis=ROLL tilt=34.83 target_us=1500 command_us=1537 attached=1 accel_g=1.021
+[  14.24s] TRACE t=263357 mode=TEST axis=ROLL tilt=34.85 target_us=1500 command_us=1534 attached=1 accel_g=1.023
+[  14.36s] TRACE t=263477 mode=TEST axis=ROLL tilt=34.84 target_us=1500 command_us=1531 attached=1 accel_g=1.016
+[  14.42s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1531 (not measured) t=263500 state=READY pitch=-17.51 roll=34.84 accel_g=1.021 samples=150 fault=NONE OLED=initialized
+[  14.52s] TRACE t=263617 mode=TEST axis=ROLL tilt=34.90 target_us=1500 command_us=1530 attached=1 accel_g=1.023
+[  14.66s] TRACE t=263737 mode=TEST axis=ROLL tilt=34.90 target_us=1500 command_us=1527 attached=1 accel_g=1.020
+[  14.77s] TRACE t=263857 mode=TEST axis=ROLL tilt=34.91 target_us=1500 command_us=1524 attached=1 accel_g=1.016
+[  14.91s] TRACE t=263977 mode=TEST axis=ROLL tilt=34.93 target_us=1500 command_us=1521 attached=1 accel_g=1.019
+[  14.91s] COMP=OFF TEST=ON axis=ROLL sign=-1 command_us=1521 (not measured) t=264000 state=READY pitch=-17.52 roll=34.93 accel_g=1.015 samples=150 fault=NONE OLED=initialized
+[  15.03s] TRACE t=264117 mode=TEST axis=ROLL tilt=34.94 target_us=1500 command_us=1520 attached=1 accel_g=1.016
+[  15.03s] SERVO SIGNAL OFF t=264163 reason=TEST 10 s LIMIT last_command_us=1519
+[  15.41s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=264500 state=READY pitch=-17.56 roll=34.91 accel_g=1.016 samples=150 fault=NONE OLED=initialized
+[  15.91s] COMP=OFF TEST=OFF axis=ROLL sign=-1 command_us=1519 (not measured) t=265000 state=READY pitch=-17.56 roll=34.89 accel_g=1.023 samples=150 fault=NONE OLED=initialized

@@ -1,0 +1,19 @@
+--- session 2026-10-04 10:02:11 steps=['AXIS PITCH', 'CALIBRATE']
+[   0.02s] >>> SENT AXIS PITCH
+[   0.09s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=345500 state=READY pitch=-50.06 roll=5.75 accel_g=1.049 samples=150 fault=NONE OLED=initialized
+[   0.34s] >>> SENT CALIBRATE
+[   0.41s] HOLD STILL: calibration attempt 1/3
+[   0.59s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=346000 state=CALIBRATING pitch=null roll=null accel_g=1.046 samples=0 fault=NONE OLED=initialized
+[   1.08s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=346500 state=CALIBRATING pitch=null roll=null accel_g=1.044 samples=0 fault=NONE OLED=initialized
+[   1.59s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=347000 state=CALIBRATING pitch=null roll=null accel_g=1.046 samples=9 fault=NONE OLED=initialized
+[   2.06s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=347500 state=CALIBRATING pitch=null roll=null accel_g=1.044 samples=29 fault=NONE OLED=initialized
+[   2.56s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=348000 state=CALIBRATING pitch=null roll=null accel_g=1.044 samples=49 fault=NONE OLED=initialized
+[   3.06s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=348500 state=CALIBRATING pitch=null roll=null accel_g=1.043 samples=69 fault=NONE OLED=initialized
+[   3.58s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=349000 state=CALIBRATING pitch=null roll=null accel_g=1.045 samples=89 fault=NONE OLED=initialized
+[   4.08s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=349500 state=CALIBRATING pitch=null roll=null accel_g=1.045 samples=109 fault=NONE OLED=initialized
+[   4.58s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=350000 state=CALIBRATING pitch=null roll=null accel_g=1.045 samples=129 fault=NONE OLED=initialized
+[   5.08s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=350500 state=CALIBRATING pitch=null roll=null accel_g=1.047 samples=149 fault=NONE OLED=initialized
+[   5.20s] CALIBRATION OK reference pitch=-2.09 roll=3.32 deg; gyro bias rad/s=-0.02668,0.07309,-0.01397
+[   5.58s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=351000 state=READY pitch=-0.03 roll=-0.01 accel_g=1.048 samples=150 fault=NONE OLED=initialized
+[   6.08s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=351500 state=READY pitch=-0.02 roll=-0.05 accel_g=1.045 samples=150 fault=NONE OLED=initialized
+[   6.59s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=352000 state=READY pitch=-0.02 roll=-0.06 accel_g=1.045 samples=150 fault=NONE OLED=initialized

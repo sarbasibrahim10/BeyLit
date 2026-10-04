@@ -1,0 +1,24 @@
+HOLD STILL: calibration attempt 1/3
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6365004 state=CALIBRATING pitch=null roll=null accel_g=1.048 samples=0 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6365504 state=CALIBRATING pitch=null roll=null accel_g=1.049 samples=0 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6366004 state=CALIBRATING pitch=null roll=null accel_g=1.048 samples=10 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6366504 state=CALIBRATING pitch=null roll=null accel_g=1.047 samples=30 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6367004 state=CALIBRATING pitch=null roll=null accel_g=1.046 samples=50 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6367504 state=CALIBRATING pitch=null roll=null accel_g=1.050 samples=70 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6368004 state=CALIBRATING pitch=null roll=null accel_g=1.044 samples=90 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6368504 state=CALIBRATING pitch=null roll=null accel_g=1.046 samples=110 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6369004 state=CALIBRATING pitch=null roll=null accel_g=1.047 samples=130 fault=NONE OLED=initialized
+CALIBRATION OK reference pitch=-1.35 roll=2.09 deg; gyro bias rad/s=-0.03026,0.07439,-0.00964
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6369504 state=READY pitch=0.00 roll=0.00 accel_g=1.048 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6370004 state=READY pitch=0.00 roll=0.00 accel_g=1.047 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6370504 state=READY pitch=0.01 roll=0.01 accel_g=1.046 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6371004 state=READY pitch=0.01 roll=-0.01 accel_g=1.051 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6371504 state=READY pitch=0.01 roll=0.02 accel_g=1.047 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6372004 state=READY pitch=0.01 roll=0.03 accel_g=1.047 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6372504 state=READY pitch=-0.01 roll=0.01 accel_g=1.046 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6373004 state=READY pitch=0.01 roll=0.00 accel_g=1.050 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6373504 state=READY pitch=0.03 roll=-0.00 accel_g=1.048 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6374004 state=READY pitch=0.03 roll=-0.03 accel_g=1.053 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6374504 state=READY pitch=0.02 roll=-0.02 accel_g=1.046 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6375004 state=READY pitch=0.00 roll=-0.01 accel_g=1.052 samples=150 fault=NONE OLED=initialized
+COMP=OFF axis=ROLL sign=-1 command_us=1450 (not measured) t=6375504 state=READY pitch=0.02 roll=0.01 accel_g=1.045 samples=150 fault=NONE OLED=initialized

@@ -1,0 +1,7 @@
+--- session 2026-10-04 11:14:06 steps=['STATUS', 'IMU CHECK']
+[   0.00s] >>> SENT STATUS
+[   0.06s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=686123 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized
+[   0.36s] >>> SENT IMU CHECK
+[   0.42s] IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+[   0.42s] IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+[   0.42s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1519 (not measured) t=686500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.022 samples=6 fault=CALIBRATION MOTION OLED=initialized

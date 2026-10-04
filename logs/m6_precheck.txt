@@ -1,0 +1,6 @@
+--- session 2026-10-04 10:06:57 steps=['STATUS']
+[   0.00s] >>> SENT STATUS
+[   0.06s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=632206 state=READY pitch=17.08 roll=2.53 accel_g=1.083 samples=150 fault=NONE OLED=initialized
+[   0.31s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=632500 state=READY pitch=17.09 roll=2.33 accel_g=1.043 samples=150 fault=NONE OLED=initialized
+[   0.81s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=633000 state=READY pitch=19.90 roll=4.78 accel_g=1.025 samples=150 fault=NONE OLED=initialized
+[   1.33s] COMP=OFF TEST=OFF axis=PITCH sign=-1 command_us=1450 (not measured) t=633500 state=READY pitch=19.73 roll=4.15 accel_g=1.041 samples=150 fault=NONE OLED=initialized

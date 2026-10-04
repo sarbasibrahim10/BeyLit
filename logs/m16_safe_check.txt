@@ -1,0 +1,10 @@
+--- session 2026-10-04 12:37:26 steps=['STATUS']
+[   0.06s] >>> SENT STATUS
+[   0.12s] measured) t=144661 state=READY pitch=-17.45 roll=77.34 accel_g=1.021 samples=150 fault=NONE OLED=initialized dist_mm=116 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM
+[   0.12s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=144682 state=READY pitch=-17.45 roll=77.34 accel_g=1.021 samples=150 fault=NONE OLED=initialized dist_mm=116 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM
+[   0.64s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=145161 state=READY pitch=-17.38 roll=77.34 accel_g=1.021 samples=150 fault=NONE OLED=initialized dist_mm=115 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM
+[   1.14s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=145661 state=READY pitch=-17.44 roll=77.36 accel_g=1.023 samples=150 fault=NONE OLED=initialized dist_mm=111 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM
+[   1.62s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=146161 state=READY pitch=-17.50 roll=77.38 accel_g=1.022 samples=150 fault=NONE OLED=initialized dist_mm=112 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM
+[   2.14s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=146661 state=READY pitch=-17.47 roll=77.38 accel_g=1.024 samples=150 fault=NONE OLED=initialized dist_mm=112 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM
+[   2.58s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=147161 state=READY pitch=-17.45 roll=77.39 accel_g=1.021 samples=150 fault=NONE OLED=initialized dist_mm=116 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM
+[   3.09s] COMP=OFF TEST=OFF pin=27 axis=ROLL sign=-1 command_us=1650 (not measured) t=147661 state=READY pitch=-17.45 roll=77.35 accel_g=1.019 samples=150 fault=NONE OLED=initialized dist_mm=113 range_status=0 dist_fault=NONE verdict=STOP MOTOR reason=OBJECT < 30 CM

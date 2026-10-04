@@ -1,0 +1,36 @@
+--- session 2026-10-04 11:37:17 steps=['STATUS']
+[   0.00s] >>> SENT STATUS
+[   0.12s] IMU CHECK address=0x68 ACK=1 id_read=1 WHO_AM_I=0x70
+[   0.12s] IMU CHECK address=0x69 ACK=0 id_read=0 WHO_AM_I=0x00
+[   0.12s] MPU6500 diagnostic initialized at 0x68; HOLD STILL.
+[   0.12s] HOLD STILL: calibration attempt 1/3
+[   0.25s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=358 state=CALIBRATING pitch=null roll=null accel_g=0.000 samples=0 fault=NONE OLED=initialized
+[   0.38s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=500 state=CALIBRATING pitch=null roll=null accel_g=1.042 samples=0 fault=NONE OLED=initialized
+[   0.89s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=1000 state=CALIBRATING pitch=null roll=null accel_g=1.046 samples=0 fault=NONE OLED=initialized
+[   1.38s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=1500 state=CALIBRATING pitch=null roll=null accel_g=1.029 samples=13 fault=NONE OLED=initialized
+[   1.89s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=2000 state=CALIBRATING pitch=null roll=null accel_g=1.052 samples=33 fault=NONE OLED=initialized
+[   2.19s] HOLD STILL: calibration attempt 2/3
+[   2.38s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=2500 state=CALIBRATING pitch=null roll=null accel_g=1.038 samples=0 fault=NONE OLED=initialized
+[   2.89s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=3000 state=CALIBRATING pitch=null roll=null accel_g=1.045 samples=0 fault=NONE OLED=initialized
+[   3.39s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=3500 state=CALIBRATING pitch=null roll=null accel_g=1.033 samples=11 fault=NONE OLED=initialized
+[   3.88s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=4000 state=CALIBRATING pitch=null roll=null accel_g=1.034 samples=31 fault=NONE OLED=initialized
+[   4.17s] CAL motion check: accel_g=1.025 gyro_radps=0.198
+[   4.17s] HOLD STILL: calibration attempt 3/3
+[   4.42s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=4500 state=CALIBRATING pitch=null roll=null accel_g=1.051 samples=0 fault=NONE OLED=initialized
+[   4.94s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=5000 state=CALIBRATING pitch=null roll=null accel_g=1.035 samples=0 fault=NONE OLED=initialized
+[   5.41s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=5500 state=CALIBRATING pitch=null roll=null accel_g=1.034 samples=12 fault=NONE OLED=initialized
+[   5.91s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=6000 state=CALIBRATING pitch=null roll=null accel_g=1.057 samples=32 fault=NONE OLED=initialized
+[   6.16s] IMU ERROR: CALIBRATION MOTION; servo OFF, compensation OFF
+[   6.41s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=6500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   6.92s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=7000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   7.41s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=7500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   7.92s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=8000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   8.41s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=8500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   8.91s] ����������������������������������������������������������������TCH sign=-1 command_us=1500 (not measured) t=9000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   9.42s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=9500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   9.92s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=10000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+--- session 2026-10-04 11:37:27 steps=['STATUS']
+[   0.00s] >>> SENT STATUS
+[   0.05s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=10616 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   0.44s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=11000 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized
+[   0.94s] COMP=OFF TEST=OFF pin=27 axis=PITCH sign=-1 command_us=1500 (not measured) t=11500 state=SENSOR_ERROR pitch=null roll=null accel_g=1.057 samples=38 fault=CALIBRATION MOTION OLED=initialized

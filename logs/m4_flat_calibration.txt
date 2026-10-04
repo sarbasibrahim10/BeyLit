@@ -1,0 +1,24 @@
+RAW accel_mps2=-8.996,-0.785,3.248 gyro_radps=-0.0167,0.0707,0.0252
+HOLD STILL: calibration attempt 1/3
+t=224001 state=CALIBRATING pitch=null roll=null accel_g=0.967 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+t=224501 state=CALIBRATING pitch=null roll=null accel_g=0.987 samples=0 servo=OFF compensation=OFF fault=NONE OLED=initialized
+CAL pose unsuitable: pitch=70.3 roll=-13.9 deg
+IMU ERROR: REST BOARD FLAT; servo OFF, compensation OFF
+t=225001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=225501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=226001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=226501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=227001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=227501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=228001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=228501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=229001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=229501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=230001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=230501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=231001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=231501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=232001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=232501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=233001 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
+t=233501 state=SENSOR_ERROR pitch=null roll=null accel_g=0.977 samples=0 servo=OFF compensation=OFF fault=REST BOARD FLAT OLED=initialized
